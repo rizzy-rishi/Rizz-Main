@@ -1,0 +1,453 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sukkoon Pangot Reel v2</title>
+<style>
+@font-face{font-family:Head;src:url(fonts/head.ttf)}
+@font-face{font-family:SerifI;src:url(fonts/serif-italic.ttf)}
+@font-face{font-family:Body;src:url(fonts/body.ttf);font-weight:700}
+@font-face{font-family:Body;src:url(fonts/body-med.ttf);font-weight:500}
+@font-face{font-family:Hindi;src:url(fonts/hindi.ttf)}
+:root{--teal:#12697A;--deep:#0A2C35;--gold:#C68A2E;--gold2:#E8B45A;--cream:#F5EFE3;--red:#E0533F}
+html,body{margin:0;padding:0;background:#000}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:var(--deep);font-family:Body,sans-serif;font-weight:700;color:#fff}
+#cam{position:absolute;inset:0}
+.L{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden}
+.abs{position:absolute}
+.head{font-family:Head,sans-serif;line-height:.9;text-transform:uppercase;white-space:nowrap}
+.serif{font-family:SerifI,serif;font-style:italic;font-weight:400}
+.kicker{font-weight:700;letter-spacing:.3em;font-size:30px;text-transform:uppercase}
+.c{left:0;width:1080px;text-align:center}
+.gold{color:var(--gold2)}
+.ts{text-shadow:0 6px 30px rgba(0,0,0,.45)}
+.pill{display:inline-flex;align-items:center;gap:16px;padding:16px 32px;border-radius:60px;font-weight:700;font-size:30px;letter-spacing:.12em;text-transform:uppercase}
+.dot{width:20px;height:20px;border-radius:50%;background:var(--red);box-shadow:0 0 16px var(--red)}
+img{display:block}
+.shot{position:absolute;inset:0;overflow:hidden;display:none}
+.shot .bg{position:absolute;left:-60px;top:-60px;width:1200px;height:2040px;object-fit:cover;filter:blur(34px) brightness(.5) saturate(1.2)}
+.shot .full{position:absolute;inset:0;width:1080px;height:1920px;object-fit:cover}
+.cardw{position:absolute;left:0;width:1080px;height:608px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.cardw img{width:1080px;height:608px}
+.photow{position:absolute;left:100px;width:880px;height:1100px;border-radius:30px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+.photow img{width:880px;height:1100px;object-fit:cover}
+svg{display:block}
+</style>
+</head>
+<body>
+<div id="stage"><div id="cam">
+
+  <!-- footage layer -->
+  <div class="L" id="foot"></div>
+  <div class="L" id="shade" style="background:linear-gradient(180deg,rgba(6,30,36,.55) 0%,rgba(6,30,36,.05) 30%,rgba(6,30,36,.1) 60%,rgba(6,30,36,.75) 100%);opacity:0"></div>
+
+  <!-- ===== HOOK text ===== -->
+  <div class="L" id="gHook">
+    <div class="abs c head ts" id="hw1" style="top:430px;font-size:200px">Live</div>
+    <div class="abs c head ts" id="hw2" style="top:610px;font-size:200px">above</div>
+    <div class="abs c head ts" id="hw3" style="top:790px;font-size:200px">the</div>
+    <div class="abs c head ts gold" id="hw4" style="top:970px;font-size:200px">clouds.</div>
+    <div class="abs c" id="htag" style="top:1210px"><span class="pill" style="background:rgba(10,44,53,.72);border:2px solid var(--gold2)">Pangot &middot; Nainital &middot; 1,900 m</span></div>
+    <div class="abs c ts" id="hhindi" style="top:1320px;font-family:Hindi,serif;font-style:italic;font-size:84px">यहाँ बादल घर आते हैं</div>
+  </div>
+
+  <!-- ===== quick-cut labels (built in JS) ===== -->
+  <div class="L" id="gLabels"></div>
+
+  <!-- ===== SPLIT words ===== -->
+  <div class="L" id="gSplit">
+    <div class="abs" id="band" style="left:0;top:790px;width:1080px;height:340px;background:rgba(10,44,53,.82)"></div>
+    <div class="abs c head" id="sw1" style="top:860px;font-size:210px">Every</div>
+    <div class="abs c head gold" id="sw2" style="top:870px;font-size:185px">season.</div>
+    <div class="abs c head" id="sw3" style="top:860px;font-size:210px">One</div>
+    <div class="abs c head gold" id="sw4" style="top:875px;font-size:170px">address.</div>
+  </div>
+
+  <!-- ===== HIMALAYA illustration ===== -->
+  <div class="L" id="gHima">
+    <div class="abs" style="inset:0;background:linear-gradient(180deg,#0A2C35 0%,#15606E 36%,#3E8F98 52%,#F0C07A 70%,#F7D9A6 78%)"></div>
+    <div class="abs" id="hmSun" style="left:230px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,#FFE7B0 0%,#F3B955 55%,rgba(243,185,85,0) 72%)"></div>
+    <div class="abs" id="hmLand" style="left:0;top:0;width:1080px;height:1920px">
+      <svg class="abs" style="left:0;top:820px" width="1080" height="1100" viewBox="0 0 1080 1100">
+        <defs><linearGradient id="snow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".32" stop-color="#EAF2F2"/><stop offset=".6" stop-color="#9FC5CB"/><stop offset="1" stop-color="#6FA3AD"/></linearGradient></defs>
+        <polygon points="0,560 90,470 160,510 260,400 340,450 430,330 520,250 590,330 650,300 720,380 800,330 880,270 960,360 1030,330 1080,370 1080,1100 0,1100" fill="url(#snow)"/>
+        <polygon points="0,720 130,620 250,680 390,580 520,670 660,600 800,690 940,610 1080,670 1080,1100 0,1100" fill="#1F7A8A"/>
+        <polygon points="0,860 170,790 360,830 560,770 760,840 920,790 1080,830 1080,1100 0,1100" fill="#0F4B58"/>
+        <g id="hmPines"></g>
+      </svg>
+      <div class="abs" id="hmL1" style="left:380px;top:960px;width:280px;text-align:center"><div style="font-size:26px;letter-spacing:.22em">NANDA DEVI</div><div style="width:3px;height:90px;background:var(--gold2);margin:10px auto 0"></div></div>
+      <div class="abs" id="hmL2" style="left:740px;top:980px;width:280px;text-align:center"><div style="font-size:26px;letter-spacing:.22em">TRISHUL</div><div style="width:3px;height:90px;background:var(--gold2);margin:10px auto 0"></div></div>
+    </div>
+    <div class="abs" id="hmMist" style="inset:0"></div>
+    <div class="abs c kicker" id="hmK" style="top:280px;color:#F3D9A8">Himalayan views from your deck</div>
+    <div class="abs c head" id="hmNum" style="top:360px;font-size:215px">1,900 M</div>
+    <div class="abs c serif" id="hmSub" style="top:590px;font-size:84px;color:#F7D9A6">above the noise.</div>
+  </div>
+
+  <!-- ===== STATS slams (over footage) ===== -->
+  <div class="L" id="gStats">
+    <div class="abs" style="inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(10,44,53,.35) 0%,rgba(10,44,53,.8) 80%)"></div>
+    <div class="abs c head gold ts" id="st1a" style="top:420px;font-size:560px;line-height:1">23</div>
+    <div class="abs c head ts" id="st1b" style="top:1010px;font-size:160px">cottages</div>
+    <div class="abs c head ts" id="st2a" style="top:640px;font-size:230px">Fully</div>
+    <div class="abs c head gold ts" id="st2b" style="top:870px;font-size:150px">furnished</div>
+    <div class="abs c head ts" id="st3a" style="top:640px;font-size:230px">Hotel</div>
+    <div class="abs c head gold ts" id="st3b" style="top:870px;font-size:150px">managed</div>
+    <div class="abs c head ts" id="st4a" style="top:640px;font-size:230px">Zero</div>
+    <div class="abs c head gold ts" id="st4b" style="top:870px;font-size:150px">upkeep</div>
+    <div class="abs c kicker" id="stK" style="top:1300px;color:#F3D9A8">Sukkoon Villas &middot; Pangot</div>
+  </div>
+
+  <!-- ===== MAP ===== -->
+  <div class="L" id="gMap">
+    <div class="abs" style="inset:0;background:radial-gradient(ellipse at 50% 55%,#145A68 0%,#0A2C35 70%)"></div>
+    <div class="abs" id="mapZoom" style="inset:0">
+      <svg class="abs" id="mapCont" width="1080" height="1920" viewBox="0 0 1080 1920"></svg>
+      <svg class="abs" id="mapRoutes" width="1080" height="1920" viewBox="0 0 1080 1920"></svg>
+      <div class="abs" id="mapPins" style="inset:0"></div>
+    </div>
+    <div class="abs c kicker gold" id="mapK" style="top:250px">Location</div>
+    <div class="abs c head" id="mapH1" style="top:310px;font-size:130px">The heart</div>
+    <div class="abs c head gold" id="mapH2" style="top:430px;font-size:130px">of Kumaon</div>
+  </div>
+
+  <!-- ===== BUT they're going fast ===== -->
+  <div class="L" id="gBut">
+    <div class="abs" style="inset:0;background:#06222A"></div>
+    <div class="abs" id="butRed" style="inset:0;background:radial-gradient(ellipse at 50% 55%,rgba(224,83,63,.45) 0%,rgba(224,83,63,0) 70%);opacity:0"></div>
+    <div class="abs c kicker gold" id="bw0" style="top:560px;font-size:44px">But</div>
+    <div class="abs c head" id="bw1" style="top:650px;font-size:200px">they're</div>
+    <div class="abs c head" id="bw2" style="top:840px;font-size:200px">going</div>
+    <div class="abs c head" id="bw3" style="top:1030px;font-size:300px;color:#FF6B55">fast.</div>
+  </div>
+
+  <!-- ===== GRID ===== -->
+  <div class="L" id="gGrid">
+    <div class="abs" style="inset:0;background:#0A2C35"></div>
+    <div class="abs" id="gVig" style="inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(224,83,63,0) 45%,rgba(224,83,63,.4) 100%)"></div>
+    <div class="abs c" id="gPill" style="top:230px"><span class="pill" style="background:rgba(224,83,63,.15);border:2px solid var(--red)"><span class="dot" id="gDot"></span>Live booking status</span></div>
+    <div class="abs" id="gHead" style="left:0;top:340px;width:1080px;display:flex;justify-content:center;align-items:baseline;gap:34px">
+      <span class="head" style="font-size:130px">Booked</span><span class="head gold" id="gNum" style="font-size:130px;font-variant-numeric:tabular-nums">0/23</span>
+    </div>
+    <div class="abs" id="gGridIn" style="left:120px;top:560px;width:840px;height:560px"></div>
+    <div class="abs" id="gBar" style="left:140px;top:1150px;width:800px;height:28px;border-radius:14px;background:rgba(255,255,255,.12);overflow:hidden"><div id="gFill" style="height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--gold2));border-radius:14px"></div></div>
+    <div class="abs c head" id="gSold1" style="top:1240px;font-size:150px">Almost</div>
+    <div class="abs c head gold" id="gSold2" style="top:1380px;font-size:150px">sold out</div>
+  </div>
+
+  <!-- ===== CUT words ===== -->
+  <div class="L" id="gCuts">
+    <div class="abs" id="cband" style="left:0;top:760px;width:1080px;height:380px;background:rgba(10,44,53,.78)"></div>
+    <div class="abs c head" id="cw1" style="top:830px;font-size:260px">Don't</div>
+    <div class="abs c head" id="cw2" style="top:830px;font-size:260px">miss</div>
+    <div class="abs c head" id="cw3" style="top:830px;font-size:260px">your</div>
+    <div class="abs c head gold" id="cw4" style="top:850px;font-size:180px">Sukkoon.</div>
+  </div>
+
+  <!-- ===== CTA ===== -->
+  <div class="L" id="gCta">
+    <div class="abs c kicker ts" id="ctK" style="top:430px;color:#F7E3BD">Pangot &middot; Nainital &middot; Uttarakhand</div>
+    <div class="abs" id="ctName" style="left:0;top:500px;width:1080px;display:flex;justify-content:center"></div>
+    <div class="abs c serif ts" id="ctTag" style="top:700px;font-size:84px;color:var(--gold2)">Invest in peace.</div>
+    <div class="abs" id="ctPanel" style="left:0;top:1000px;width:1080px;height:1000px">
+      <svg class="abs" style="left:0;top:0" width="1080" height="1000" viewBox="0 0 1080 1000">
+        <path d="M0 110 L140 40 L240 90 L380 0 L520 80 L640 20 L780 100 L900 40 L1080 110 L1080 1000 L0 1000 Z" fill="#F5EFE3"/>
+        <path d="M0 110 L140 40 L240 90 L380 0 L520 80 L640 20 L780 100 L900 40 L1080 110" fill="none" stroke="#C68A2E" stroke-width="6"/>
+      </svg>
+      <img class="abs" id="ctLogo" src="assets/logo.png" style="left:447px;top:140px;height:250px">
+      <div class="abs c" id="ctBtnW" style="top:430px">
+        <span id="ctBtn" style="position:relative;overflow:hidden;display:inline-block;padding:38px 72px;border-radius:80px;background:var(--gold);color:#fff;font-weight:700;font-size:48px;letter-spacing:.08em;box-shadow:0 18px 40px rgba(198,138,46,.4)">BOOK YOUR SITE VISIT<span id="ctShine" style="position:absolute;top:-30px;left:-200px;width:90px;height:220px;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.6),rgba(255,255,255,0));transform:rotate(20deg)"></span></span>
+      </div>
+      <div class="abs c" id="ctDm" style="top:600px;font-size:44px;color:var(--teal)">DM &ldquo;SUKKOON&rdquo; &middot; gargrealtygroup.com</div>
+      <div class="abs c kicker" id="ctLoc" style="top:670px;font-size:26px;color:#7C8C8E">Only a few cottages left</div>
+      <div class="abs c" id="ctDisc" style="top:870px;font-size:20px;font-weight:500;color:#5F7F82">Site footage from Sukkoon, Pangot. Illustrations for representation only. T&amp;C apply.</div>
+    </div>
+  </div>
+
+</div>
+<div class="abs" id="flash" style="inset:0;background:#fff;opacity:0"></div>
+</div>
+
+<script>
+const CFG={TOTAL:23,LEFT:3};
+const FPS=30;
+const SEQ={hero:284,cot:181,mistroof:120,sunny1:180,sunny2:241,fog1:120,fog2:132};
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const lerp=(a,b,p)=>a+(b-a)*p;
+const P=(t,a,b)=>clamp((t-a)/(b-a));
+const eo=p=>1-Math.pow(1-p,3);
+const eio=p=>p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;
+const eback=p=>{const c1=2.0,c3=c1+1;return 1+c3*Math.pow(p-1,3)+c1*Math.pow(p-1,2)};
+const $=id=>document.getElementById(id);
+const NS='http://www.w3.org/2000/svg';
+function st(el,o){if(typeof el==='string')el=$(el);for(const k in o)el.style[k]=o[k];}
+function rng(seed){let s=seed>>>0;return()=>{s=(s*1664525+1013904223)>>>0;return s/4294967296;};}
+function vis(id,on){$(id).style.display=on?'block':'none';}
+
+// ---- kinetic text primitives ----
+// slam: big scale-down punch at a, optional fast exit at out
+function slam(id,t,a,out=null,from=1.9){
+  const p=P(t,a,a+.16);let s=p<=0?from:lerp(from,1,eback(p)),o=clamp(p*4);
+  if(out!==null){const q=P(t,out,out+.1);o*=1-q;s*=1-q*.15;}
+  st(id,{opacity:o,transform:`scale(${s})`});
+}
+function rise(id,t,a,dur=.3,dy=60,out=null){
+  const p=eo(P(t,a,a+dur));let o=p,y=(1-p)*dy;
+  if(out!==null){const q=eio(P(t,out,out+.18));o*=1-q;y-=q*80;}
+  st(id,{opacity:o,transform:`translateY(${y}px)`});
+}
+function wipe(id,t,a,dur=.25,out=null){
+  const p=eio(P(t,a,a+dur));let c=`inset(0 ${(1-p)*100}% 0 0)`;
+  if(out!==null){const q=eio(P(t,out,out+.15));c=`inset(0 0 0 ${q*100}%)`;}
+  st(id,{clipPath:c,opacity:p>0?1:0});
+}
+function pop(id,t,a,dur=.3,out=null){
+  const p=P(t,a,a+dur);let s=p<=0?0:eback(p),o=clamp(p*3);
+  if(out!==null)o*=1-P(t,out,out+.12);
+  st(id,{opacity:o,transform:`scale(${s})`});
+}
+
+// ---------------- footage shots ----------------
+const SHOTS=[
+ {kind:'full',seq:'hero',t0:0,t1:4,off:0,sp:1,in:'none',out:'whip'},
+ {kind:'card',seq:'cot',t0:4,t1:5,off:1.5,sp:1.1,in:'whip',out:'whip',crop:1.2},
+ {kind:'photo',img:'deck',t0:5,t1:6,in:'whip',out:'whip'},
+ {kind:'full',seq:'hero',t0:6,t1:7,off:2.2,sp:.9,in:'whip',out:'whip'},
+ {kind:'photo',img:'roofs',t0:7,t1:8,in:'whip',out:'whip'},
+ {kind:'card',seq:'sunny1',t0:8,t1:9,off:.5,sp:1,in:'whip',out:'whip'},
+ {kind:'card',seq:'fog1',t0:9,t1:10,off:0,sp:1,in:'whip',out:'cut'},
+ {kind:'split',seqs:['sunny2','mistroof','fog2'],offs:[1,0,.5],t0:10,t1:12,in:'cut',out:'cut'},
+ {kind:'full',seq:'hero',t0:14,t1:18,off:.3,sp:.55,in:'cut',out:'cut',dim:.55},
+ {kind:'full',seq:'hero',t0:28.5,t1:29,off:.8,sp:1.4,in:'cut',out:'cut'},
+ {kind:'card',seq:'sunny2',t0:29,t1:29.5,off:3,sp:1.2,in:'cut',out:'cut'},
+ {kind:'photo',img:'balcony',t0:29.5,t1:30,in:'cut',out:'cut'},
+ {kind:'card',seq:'cot',t0:30,t1:31,off:2.5,sp:1,in:'cut',out:'cut',crop:1.2},
+ {kind:'full',seq:'hero',t0:31,t1:38.3,off:1.0,sp:.4,in:'cut',out:'none'},
+];
+const W=.1; // half-width of whip transitions
+function fpath(seq,i){return `assets/${seq}/${String(i).padStart(4,'0')}.jpg`;}
+function fidx(seq,t,t0,off,sp){return clamp(Math.floor((off+Math.max(0,t-t0)*sp)*FPS),0,SEQ[seq]-1)+1;}
+function buildShots(){
+  const foot=$('foot');
+  SHOTS.forEach((s,i)=>{
+    const d=document.createElement('div');d.className='shot';d.id='shot'+i;
+    if(s.kind==='full')d.innerHTML=`<img class="full">`;
+    if(s.kind==='card')d.innerHTML=`<img class="bg"><div class="cardw" style="top:656px"><img class="fg" style="transform-origin:0 50%;transform:scale(${s.crop||1})"></div>`;
+    if(s.kind==='photo')d.innerHTML=`<img class="bg" src="assets/photos/${s.img}.jpg"><div class="photow" style="top:590px"><img class="fg" src="assets/photos/${s.img}.jpg"></div>`;
+    if(s.kind==='split'){d.style.background='#0A2C35';d.innerHTML=[32,656,1280].map((y,k)=>`<div class="cardw r${k}" style="top:${y}px"><img class="fg${k}"></div>`).join('');}
+    foot.appendChild(d);
+  });
+}
+const pending=[];
+function setSrc(img,src){if(img.getAttribute('src')!==src){img.setAttribute('src',src);pending.push(img.decode().catch(()=>{}));}}
+function renderShots(t){
+  let anyFull=false;
+  SHOTS.forEach((s,i)=>{
+    const a=s.t0-(s.in==='whip'?W:0),b=s.t1+(s.out==='whip'?W:0);
+    const el=$('shot'+i);const on=t>=a&&t<b;
+    el.style.display=on?'block':'none';if(!on)return;
+    let x=0,blur=0;
+    if(s.in==='whip'){const p=P(t,s.t0-W,s.t0+W);x+=(1-eio(p))*1080;blur+=Math.sin(Math.PI*p)*22;}
+    if(s.out==='whip'){const q=P(t,s.t1-W,s.t1+W);x-=eio(q)*1080;blur+=Math.sin(Math.PI*q)*22;}
+    const punch=1+.1*(1-eo(P(t,s.t0,s.t0+.45)));
+    const drift=1+.04*P(t,s.t0,s.t1);
+    el.style.transform=`translateX(${x}px)`;el.style.filter=blur>.5?`blur(${blur}px)`:'none';
+    if(s.kind==='full'){
+      const img=el.querySelector('.full');setSrc(img,fpath(s.seq,fidx(s.seq,t,s.t0,s.off,s.sp)));
+      img.style.transform=`scale(${punch*drift})`;
+      img.style.filter=s.dim?`brightness(${s.dim})`:'none';
+    }else if(s.kind==='card'){
+      const src=fpath(s.seq,fidx(s.seq,t,s.t0,s.off,s.sp));
+      setSrc(el.querySelector('.bg'),src);setSrc(el.querySelector('.fg'),src);
+      el.querySelector('.cardw').style.transform=`scale(${punch})`;
+    }else if(s.kind==='photo'){
+      el.querySelector('.photow').style.transform=`scale(${punch})`;
+      el.querySelector('.fg').style.transform=`scale(${1.12-.1*P(t,s.t0,s.t1)})`;
+    }else if(s.kind==='split'){
+      s.seqs.forEach((q,k)=>{
+        setSrc(el.querySelector('.fg'+k),fpath(q,fidx(q,t,s.t0,s.offs[k],1)));
+        const p=eo(P(t,s.t0+k*.08,s.t0+k*.08+.28));
+        el.querySelector('.r'+k).style.transform=`translateX(${(1-p)*(k%2?-1080:1080)}px)`;
+      });
+    }
+  });
+}
+
+// ---------------- quick-cut labels ----------------
+const LABELS=[
+ {t0:4,t1:5,k:'Sukkoon &middot; Pangot',a:'Wooden',b:'cottages',pos:'top'},
+ {t0:5,t1:6,k:'Step outside',a:'Private',b:'decks',pos:'top'},
+ {t0:6,t1:7,k:'1,900 m up',a:'Wake up in',b:'the clouds',pos:'bottom'},
+ {t0:7,t1:8,k:'All around you',a:'Deodar',b:'forest',pos:'top'},
+ {t0:8,t1:9,k:'Valley views',a:'Clear-sky',b:'days',pos:'top'},
+ {t0:9,t1:10,k:'Monsoon in Pangot',a:'Misty',b:'mornings',pos:'top'},
+];
+function buildLabels(){
+  $('gLabels').innerHTML=LABELS.map((l,i)=>{
+    const y=l.pos==='top'?240:1170;
+    return `<div class="abs c kicker ts" id="lk${i}" style="top:${y}px;color:#F7E3BD">${l.k}</div>
+      <div class="abs c head ts" id="la${i}" style="top:${y+50}px;font-size:${l.a.length>8?118:140}px">${l.a}</div>
+      <div class="abs c head gold ts" id="lb${i}" style="top:${y+180}px;font-size:${l.b.length>8?118:140}px">${l.b}</div>`;}).join('');
+}
+function renderLabels(t){
+  LABELS.forEach((l,i)=>{
+    const on=t>=l.t0-.05&&t<l.t1+.1;['lk','la','lb'].forEach(p=>$(p+i).style.display=on?'block':'none');if(!on)return;
+    wipe('lk'+i,t,l.t0+.02,.2,l.t1-.08);
+    slam('la'+i,t,l.t0+.04,l.t1-.08,1.6);
+    slam('lb'+i,t,l.t0+.25,l.t1-.08,1.6);
+  });
+}
+
+// ---------------- illustration builders ----------------
+function pine(x,y,h,col){
+  const g=document.createElementNS(NS,'g');const w=h*.42;
+  for(let i=0;i<3;i++){const p=document.createElementNS(NS,'polygon');const ty=y-h+i*h*.26,by=ty+h*.45,ww=w*(.55+i*.25);
+    p.setAttribute('points',`${x},${ty} ${x-ww/2},${by} ${x+ww/2},${by}`);p.setAttribute('fill',col);g.appendChild(p);}
+  return g;
+}
+function forest(gid,n,y0,y1,h0,h1,col,seed){const g=$(gid),r=rng(seed),it=[];
+  for(let i=0;i<n;i++)it.push({x:lerp(-20,1100,(i+r()*.8)/n),y:lerp(y0,y1,r()),h:lerp(h0,h1,r())});
+  it.sort((a,b)=>a.y-b.y).forEach(o=>g.appendChild(pine(o.x,o.y,o.h,col)));}
+function buildHima(){
+  forest('hmPines',30,830,1100,110,230,'#0A3640',21);
+  const m=$('hmMist');
+  [[-200,1180,900,160,.35],[300,1290,1000,180,.28],[-100,1420,1200,220,.22],[500,1520,900,200,.25]].forEach((q,i)=>{
+    const d=document.createElement('div');d.className='abs mist';d.dataset.i=i;d.dataset.x=q[0];
+    st(d,{left:'0px',top:q[1]+'px',width:q[2]+'px',height:q[3]+'px',borderRadius:'50%',background:`rgba(255,255,255,${q[4]})`,filter:'blur(40px)'});m.appendChild(d);});
+}
+function iconSVG(kind){const c='#0A2C35';
+  if(kind==='lake')return `<svg width="90" height="90" viewBox="0 0 90 90"><path d="M10 58 q12-8 24 0 t24 0 t24 0" fill="none" stroke="${c}" stroke-width="6" stroke-linecap="round"/><path d="M10 72 q12-8 24 0 t24 0 t24 0" fill="none" stroke="${c}" stroke-width="6" stroke-linecap="round"/><path d="M30 46 h32 l-6 8 h-20z" fill="${c}"/><path d="M46 18 v26 M46 20 l14 18 h-14" fill="${c}" stroke="${c}" stroke-width="4"/></svg>`;
+  if(kind==='temple')return `<svg width="90" height="90" viewBox="0 0 90 90"><path d="M45 8 v8" stroke="${c}" stroke-width="4"/><path d="M45 10 l12 5 l-12 5z" fill="${c}"/><path d="M45 20 C 30 32 28 46 28 56 h34 C 62 46 60 32 45 20z" fill="${c}"/><rect x="18" y="56" width="54" height="10" fill="${c}"/><rect x="24" y="66" width="42" height="16" fill="${c}"/><rect x="40" y="70" width="10" height="12" fill="#E8B45A"/></svg>`;
+  if(kind==='tiger')return `<svg width="90" height="90" viewBox="0 0 90 90"><ellipse cx="45" cy="58" rx="16" ry="14" fill="${c}"/><ellipse cx="22" cy="38" rx="8" ry="10" fill="${c}"/><ellipse cx="36" cy="26" rx="8" ry="10" fill="${c}"/><ellipse cx="54" cy="26" rx="8" ry="10" fill="${c}"/><ellipse cx="68" cy="38" rx="8" ry="10" fill="${c}"/></svg>`;
+  return `<svg width="90" height="90" viewBox="0 0 90 90"><path d="M14 52 q16 -4 26 -18 q6 -10 16 -10 q8 0 12 6 l10 2 l-10 5 q0 20 -22 26 q-14 4 -32 -11z" fill="${c}"/><circle cx="58" cy="30" r="3" fill="#E8B45A"/><path d="M36 50 l-14 22 M44 52 l-4 22" stroke="${c}" stroke-width="4"/></svg>`;}
+const MAP={pin:[540,1120],dests:[
+ {x:230,y:810,icon:'bird',t:'580+ BIRD SPECIES',s:'Naina Devi Bird Reserve'},
+ {x:850,y:820,icon:'temple',t:'KAINCHI DHAM',s:'Neem Karoli Baba ashram'},
+ {x:830,y:1420,icon:'lake',t:'NAINITAL',s:'Naini Lake &middot; 15 km'},
+ {x:240,y:1430,icon:'tiger',t:'JIM CORBETT',s:'Tiger country'},
+]};
+function buildMap(){
+  let h='';for(let i=0;i<9;i++)h+=`<ellipse cx="540" cy="1120" rx="${140+i*95}" ry="${90+i*70}" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="3"/>`;
+  $('mapCont').innerHTML=h;const [px,py]=MAP.pin;let rh='';
+  MAP.dests.forEach((d,i)=>{const mx=(px+d.x)/2+(i%2?120:-120),my=(py+d.y)/2;
+    rh+=`<path id="r${i}" d="M${px} ${py} Q${mx} ${my} ${d.x} ${d.y}" fill="none" stroke="#E8B45A" stroke-width="8" stroke-linecap="round"/>`;});
+  $('mapRoutes').innerHTML=rh;
+  let ph=`<div class="abs" id="pinw" style="left:${px-80}px;top:${py-80}px;width:160px;height:160px">
+    <div class="abs ring" style="inset:0;border-radius:50%;border:4px solid #E8B45A"></div><div class="abs ring" style="inset:0;border-radius:50%;border:4px solid #E8B45A"></div>
+    <div class="abs" style="left:45px;top:45px;width:70px;height:70px;border-radius:50%;background:#E8B45A;box-shadow:0 0 40px #E8B45A"></div>
+    <div class="abs" style="left:65px;top:65px;width:30px;height:30px;border-radius:50%;background:#0A2C35"></div></div>
+    <div class="abs" id="pinlab" style="left:${px-250}px;top:${py+92}px;width:500px;text-align:center"><div class="head" style="font-size:56px">Sukkoon</div><div style="letter-spacing:.25em;font-size:24px;color:#E8B45A">PANGOT</div></div>`;
+  MAP.dests.forEach((d,i)=>{ph+=`<div class="abs" id="md${i}" style="left:${d.x-160}px;top:${d.y-65}px;width:320px;text-align:center">
+    <div style="width:130px;height:130px;margin:0 auto;border-radius:50%;background:#F5EFE3;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 8px rgba(232,180,90,.35)">${iconSVG(d.icon)}</div>
+    <div style="font-size:32px;letter-spacing:.06em;margin-top:16px">${d.t}</div><div class="serif" style="font-size:32px;color:#E3D3B5;margin-top:4px">${d.s}</div></div>`;});
+  $('mapPins').innerHTML=ph;
+}
+function soldTimes(){const n=CFG.TOTAL-CFG.LEFT,o=[];for(let i=0;i<n;i++)o.push(25.5+2.0*Math.sqrt(i/(n-1)));return o;}
+let SOLD=[];
+function buildGrid(){
+  const cols=6,cw=140;let h='';
+  for(let i=0;i<CFG.TOTAL;i++){const r=Math.floor(i/cols),c=i%cols,rc=Math.min(cols,CFG.TOTAL-r*cols),off=(cols-rc)*cw/2;
+    h+=`<div class="abs" id="h${i}" style="left:${off+c*cw}px;top:${r*140}px;width:140px;height:140px">
+      <svg class="abs" width="140" height="140" viewBox="0 0 140 140"><path d="M22 66 L70 26 L118 66 V118 H22 Z" fill="none" stroke="rgba(255,255,255,.75)" stroke-width="6" stroke-linejoin="round"/>
+      <path class="hf" d="M22 66 L70 26 L118 66 V118 H22 Z" fill="#E8B45A" opacity="0"/><rect class="hd" x="60" y="86" width="20" height="32" fill="rgba(255,255,255,.75)"/></svg>
+      <div class="abs stamp" style="left:14px;top:70px;width:112px;text-align:center;font-size:26px;letter-spacing:.1em;background:#E0533F;border-radius:6px;padding:4px 0;opacity:0">SOLD</div></div>`;}
+  $('gGridIn').innerHTML=h;
+  const r=rng(99),idx=[...Array(CFG.TOTAL).keys()];for(let i=idx.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[idx[i],idx[j]]=[idx[j],idx[i]];}
+  SOLD=idx.slice(0,CFG.TOTAL-CFG.LEFT);
+}
+function buildCta(){
+  $('ctName').innerHTML=[...'SUKKOON'].map((ch,i)=>`<span class="head ts" id="cn${i}" style="display:inline-block;font-size:168px;letter-spacing:.02em">${ch}</span>`).join('');
+}
+
+// ---------------- global hits: flash + shake ----------------
+const FLASH=[[0,.25],[4,.18],[12,.55],[14,.35],[15,.15],[16,.15],[17,.15],[18,.2],[25,.3],[28.5,.3],[29,.25],[29.5,.25],[30,.3],[31,.45]];
+const HITS=[[0,1],[.5,.7],[1,.7],[1.5,1],[14,1.2],[14.25,.6],[15,.8],[15.25,.5],[16,.8],[16.25,.5],[17,.8],[17.25,.5],[23.5,.6],[24,.8],[24.5,1.6],[27.75,1],[28.5,.9],[29,.9],[29.5,.9],[30,1.2],[31,.8]];
+
+function render(t){
+  pending.length=0;
+  renderShots(t);
+  const G=(id,a,b)=>{const on=t>=a&&t<b;vis(id,on);return on;};
+
+  st('shade',{opacity:(t<4.1||t>=6&&t<7.1)?1:(t>=28.5&&t<31)?.6:(t>=31)?.9:.0});
+
+  if(G('gHook',0,4.2)){
+    ['hw1','hw2','hw3','hw4'].forEach((id,i)=>{slam(id,t,[-.1,.5,1.0,1.5][i],null,2.1);
+      if(t>3.55){const q=eio(P(t,3.55+i*.05,3.8+i*.05));$(id).style.transform+=` translateY(${-q*400}px)`;$(id).style.opacity=1-q;}});
+    wipe('htag',t,2.0,.25,3.7);rise('hhindi',t,2.5,.35,50,3.7);
+  }
+  if(G('gLabels',3.9,10.2))renderLabels(t);
+  if(G('gSplit',10,12)){
+    ['sw1','sw2','sw3','sw4'].forEach((id,i)=>{const a=10+i*.5;slam(id,t,a,i<3?a+.45:11.9,1.8);});
+    const bp=eo(P(t,10,10.2));st('band',{transform:`scaleY(${bp})`});
+  }
+  if(G('gHima',12,14)){
+    const lt=t-12;const z=eo(P(lt,0,.5));
+    st('gHima',{transform:`scale(${lerp(1.35,1,z)})`});
+    st('hmLand',{transform:`translateY(${(1-eo(P(lt,0,.7)))*420}px)`});
+    st('hmSun',{top:lerp(1330,1060,eo(P(lt,0,1.6)))+'px'});
+    document.querySelectorAll('#hmMist .mist').forEach(d=>{const i=+d.dataset.i;d.style.transform=`translateX(${+d.dataset.x+(i%2?-1:1)*lt*90}px)`;});
+    wipe('hmK',t,12.2,.25);
+    const cp=eo(P(t,12.25,13.1));st('hmNum',{opacity:clamp((t-12.25)*6),transform:`scale(${lerp(1.3,1,eo(P(t,12.25,12.45)))})`});
+    $('hmNum').textContent=Math.round(1900*cp).toLocaleString('en-IN')+' M';
+    rise('hmSub',t,13.0,.3,40);rise('hmL1',t,12.9,.3,30);rise('hmL2',t,13.1,.3,30);
+  }
+  if(G('gStats',14,18.05)){
+    const pairs=[['st1a','st1b',14],['st2a','st2b',15],['st3a','st3b',16],['st4a','st4b',17]];
+    pairs.forEach(([a,b,s])=>{slam(a,t,s,s+.92,a==='st1a'?2.4:2.0);slam(b,t,s+.25,s+.92,1.8);});
+    wipe('stK',t,14.3,.3,17.9);
+  }
+  if(G('gMap',17.9,23)){
+    const e=eio(P(t,17.9,18.15));st('gMap',{transform:`translateY(${(1-e)*1920}px)`});
+    rise('mapK',t,18.1,.25,30);slam('mapH1',t,18.15,null,1.6);slam('mapH2',t,18.4,null,1.6);
+    pop('pinw',t,18.5,.3);rise('pinlab',t,18.6,.25,20);
+    document.querySelectorAll('#pinw .ring').forEach((r,i)=>{const ph=((t-18.5)*1.2+i*.5)%1;r.style.transform=`scale(${1+ph*1.6})`;r.style.opacity=t>18.5?(1-ph)*.8:0;});
+    MAP.dests.forEach((d,i)=>{const a=19+i*.5,path=$('r'+i),L=path.getTotalLength(),p=eio(P(t,a,a+.3));
+      path.style.strokeDasharray=`${L*p} ${L}`;path.style.opacity=p>0?1:0;pop('md'+i,t,a+.22,.3);});
+    st('mapZoom',{transform:`scale(${1+.06*P(t,21,23)})`});
+  }
+  if(G('gBut',23,25)){
+    rise('bw0',t,23.0,.2,30);
+    slam('bw1',t,23.5,null,1.8);slam('bw2',t,24.0,null,1.8);slam('bw3',t,24.5,null,2.4);
+    st('butRed',{opacity:P(t,24.5,24.6)*(.6+.4*Math.sin(t*20))});
+  }
+  if(G('gGrid',25,28.5)){
+    st('gVig',{opacity:.35+.4*Math.max(0,Math.sin(t*12))*P(t,25.5,27.5)});
+    $('gDot').style.opacity=Math.sin(t*16)>0?1:.25;
+    pop('gPill',t,25.0,.25);slam('gHead',t,25.05,null,1.5);
+    for(let i=0;i<CFG.TOTAL;i++)$('h'+i).style.opacity=clamp((t-25.1-i*.015)*6);
+    const ts=soldTimes();let n=0;
+    SOLD.forEach((hi,k)=>{const a=ts[k],el=$('h'+hi),p=P(t,a,a+.1);if(t>=a)n++;
+      el.querySelector('.hf').setAttribute('opacity',p);el.querySelector('.hd').setAttribute('fill',p>.5?'#0A2C35':'rgba(255,255,255,.75)');
+      const sp=P(t,a,a+.14),stp=el.querySelector('.stamp');stp.style.opacity=sp;stp.style.transform=`scale(${sp>0?lerp(2,1,eo(sp)):1}) rotate(-8deg)`;});
+    const soldSet=new Set(SOLD);
+    for(let i=0;i<CFG.TOTAL;i++)if(!soldSet.has(i)){const el=$('h'+i),pl=P(t,27.6,27.8)*(.5+.5*Math.sin(t*14));el.style.filter=`drop-shadow(0 0 ${pl*26}px #E8B45A)`;el.style.transform=`scale(${1+pl*.1})`;}
+    $('gNum').textContent=`${n}/${CFG.TOTAL}`;st('gFill',{width:(n/CFG.TOTAL*100)+'%'});
+    rise('gBar',t,25.3,.25,20);
+    slam('gSold1',t,27.75,null,2.2);slam('gSold2',t,28.0,null,2.0);
+  }
+  if(G('gCuts',28.5,31)){
+    [['cw1',28.5],['cw2',29],['cw3',29.5],['cw4',30]].forEach(([id,a],i)=>slam(id,t,a,i<3?a+.46:null,2.0));
+    st('cband',{transform:`scaleY(${eo(P(t,28.5,28.62))})`});
+  }
+  if(G('gCta',31,40)){
+    wipe('ctK',t,31.2,.3);
+    for(let i=0;i<7;i++)slam('cn'+i,t,31.35+i*.05,null,2.2);
+    rise('ctTag',t,31.8,.35,40);
+    const pp=eo(P(t,31.6,32.1));st('ctPanel',{transform:`translateY(${(1-pp)*1000}px)`});
+    pop('ctLogo',t,32.1,.35);pop('ctBtnW',t,32.5,.35);rise('ctDm',t,32.8,.3,20);rise('ctLoc',t,33.0,.3,20);rise('ctDisc',t,33.2,.3,10);
+    const sh=((t-33.2)%1.4)/1.4;$('ctShine').style.left=(t>33.2?lerp(-200,900,sh):-200)+'px';
+    st('ctBtn',{transform:`scale(${1+.03*Math.max(0,Math.sin((t-33)*Math.PI*2))})`});
+  }
+  // flash + shake
+  let fl=0;FLASH.forEach(([a,m])=>{if(t>=a&&t<a+.2)fl=Math.max(fl,m*(1-(t-a)/.2));});st('flash',{opacity:fl});
+  let sx=0,sy=0;HITS.forEach(([a,m],k)=>{if(t>=a&&t<a+.3){const e=m*(1-(t-a)/.3)*14;sx+=Math.sin((t-a)*90+k)*e;sy+=Math.cos((t-a)*77+k*2)*e;}});
+  st('cam',{transform:`translate(${sx}px,${sy}px)`});
+  return Promise.all(pending);
+}
+
+buildShots();buildLabels();buildHima();buildMap();buildGrid();buildCta();
+window.render=render;window.READY=true;
+if(!/render=1/.test(location.search)){const t0=performance.now();(function loop(){render(((performance.now()-t0)/1000)%38);requestAnimationFrame(loop);})();}
+</script>
+</body>
+</html>
