@@ -34,7 +34,7 @@ Collected 29 Sep 2026 from public web sources. Items marked **VERIFY** need conf
 - "Your own cottage in the clouds, 2,000 m above the noise."
 - "Wake up to 580 bird species, not traffic."
 - "A second home that pays for itself" (only if the rental or lease claim is verified).
-- "5 hrs from Delhi's heat to Himalayan oak forest." The drive is actually 7–8 hr, so change the number or drop this one.
+- "One road trip from Delhi to Himalayan oak forest."
 - Studio from ₹35L: "own a Himalayan getaway for less than a city 1BHK." **VERIFY** the price first.
 
 ---
