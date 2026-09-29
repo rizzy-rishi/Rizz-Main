@@ -1,0 +1,582 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sukkoon Pangot Reel</title>
+<style>
+@font-face{font-family:Head;src:url(fonts/head.ttf)}
+@font-face{font-family:SerifI;src:url(fonts/serif-italic.ttf)}
+@font-face{font-family:Body;src:url(fonts/body.ttf)}
+:root{
+  --teal:#12697A; --teal2:#1B7F91; --deep:#0A2C35; --deep2:#0E3F4B;
+  --gold:#C68A2E; --gold2:#E3AC4E; --cream:#F5EFE3; --red:#E0533F;
+}
+html,body{margin:0;padding:0;background:#000}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:var(--deep);
+  font-family:Body,"DejaVu Sans",sans-serif;color:#fff}
+.scene{position:absolute;left:0;top:0;width:1080px;height:1920px;opacity:0;overflow:hidden}
+.abs{position:absolute}
+.head{font-family:Head,"DejaVu Sans",sans-serif;font-weight:900;line-height:.92;text-transform:uppercase;letter-spacing:-.005em}
+.serif{font-family:SerifI,"DejaVu Serif",serif;font-style:italic}
+.kicker{font-weight:700;letter-spacing:.3em;font-size:30px;text-transform:uppercase}
+.center{left:0;width:1080px;text-align:center}
+.gold{color:var(--gold2)}
+.pill{display:inline-flex;align-items:center;gap:18px;padding:18px 34px;border-radius:60px;font-weight:700;font-size:34px;letter-spacing:.06em;text-transform:uppercase}
+.dot{width:22px;height:22px;border-radius:50%;background:var(--red);box-shadow:0 0 18px var(--red)}
+svg{display:block}
+</style>
+</head>
+<body>
+<div id="stage">
+
+  <!-- ============ S1 HOOK ============ -->
+  <div class="scene" id="s1">
+    <div class="abs" id="s1grid" style="inset:0"></div>
+    <svg class="abs" id="s1hills" style="left:0;bottom:0" width="1080" height="700" viewBox="0 0 1080 700">
+      <polygon points="0,380 140,260 260,330 400,180 520,300 640,210 780,320 900,230 1080,330 1080,700 0,700" fill="#0F4552"/>
+      <polygon points="0,500 180,420 360,470 560,400 760,470 920,420 1080,460 1080,700 0,700" fill="#0C3843"/>
+      <g id="s1pines"></g>
+    </svg>
+    <div class="abs center kicker gold" id="s1k" style="top:300px">Sukkoon Villas &middot; Pangot</div>
+    <div class="abs center head" id="s1only" style="top:430px;font-size:120px">Only</div>
+    <div class="abs center head" id="s1num" style="top:540px;font-size:560px;color:var(--gold2);line-height:1">23</div>
+    <div class="abs center head" id="s1cot" style="top:1060px;font-size:150px">Cottages.</div>
+    <div class="abs center serif" id="s1sub" style="top:1225px;font-size:70px;color:#E9E2D2">in the Himalayas.</div>
+    <div class="abs center" id="s1pillw" style="top:1370px"><span class="pill" id="s1pill" style="background:rgba(224,83,63,.16);border:2px solid var(--red);color:#fff"><span class="dot" id="s1dot"></span>And they're selling fast</span></div>
+  </div>
+
+  <!-- ============ S2 ALTITUDE / HIMALAYA ============ -->
+  <div class="scene" id="s2">
+    <div class="abs" id="s2sky" style="inset:0;background:linear-gradient(180deg,#0A2C35 0%,#15606E 38%,#3E8F98 55%,#F0C07A 72%,#F7D9A6 80%)"></div>
+    <div class="abs" id="s2sun" style="left:230px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,#FFE7B0 0%,#F3B955 55%,rgba(243,185,85,0) 72%)"></div>
+    <div class="abs" id="s2land" style="left:0;top:0;width:1080px;height:1920px">
+      <svg class="abs" style="left:0;top:820px" width="1080" height="1100" viewBox="0 0 1080 1100">
+        <defs>
+          <linearGradient id="snow" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#FFFFFF"/><stop offset=".32" stop-color="#EAF2F2"/><stop offset=".6" stop-color="#9FC5CB"/><stop offset="1" stop-color="#6FA3AD"/>
+          </linearGradient>
+        </defs>
+        <g id="s2far">
+          <polygon points="0,560 90,470 160,510 260,400 340,450 430,330 520,250 590,330 650,300 720,380 800,330 880,270 960,360 1030,330 1080,370 1080,1100 0,1100" fill="url(#snow)"/>
+          <polyline points="430,330 470,360 520,250 560,300 590,330" fill="none" stroke="#fff" stroke-width="3" opacity=".7"/>
+        </g>
+        <polygon id="s2mid" points="0,720 130,620 250,680 390,580 520,670 660,600 800,690 940,610 1080,670 1080,1100 0,1100" fill="#1F7A8A"/>
+        <polygon id="s2near" points="0,860 170,790 360,830 560,770 760,840 920,790 1080,830 1080,1100 0,1100" fill="#0F4B58"/>
+        <g id="s2pines"></g>
+      </svg>
+      <!-- peak labels -->
+      <div class="abs" id="s2lab1" style="left:380px;top:960px;text-align:center;width:280px">
+        <div style="font-weight:700;font-size:26px;letter-spacing:.22em">NANDA DEVI</div>
+        <div style="width:2px;height:90px;background:var(--gold2);margin:10px auto 0"></div>
+      </div>
+      <div class="abs" id="s2lab2" style="left:740px;top:980px;text-align:center;width:280px">
+        <div style="font-weight:700;font-size:26px;letter-spacing:.22em">TRISHUL</div>
+        <div style="width:2px;height:90px;background:var(--gold2);margin:10px auto 0"></div>
+      </div>
+    </div>
+    <div class="abs" id="s2mist" style="inset:0"></div>
+    <div class="abs" id="s2birds" style="inset:0"></div>
+    <div class="abs center kicker" id="s2k" style="top:290px;color:#F3D9A8">Pangot &middot; Nainital &middot; Uttarakhand</div>
+    <div class="abs center head" id="s2num" style="top:370px;font-size:230px">1,900 M</div>
+    <div class="abs center serif" id="s2sub" style="top:600px;font-size:84px;color:#F7D9A6">above the noise.</div>
+  </div>
+
+  <!-- ============ S3 COTTAGES (illustrated) ============ -->
+  <div class="scene" id="s3">
+    <!-- panel A: exterior at golden hour -->
+    <div class="abs" id="s3a" style="inset:0">
+      <div class="abs" id="s3aCam" style="inset:0">
+        <div class="abs" style="inset:0;background:linear-gradient(180deg,#1A5E6B 0%,#4E9AA0 12%,#F2C88A 24%,#F6DDB4 30%)"></div>
+        <svg class="abs" style="left:0;top:180px" width="1080" height="1740" viewBox="0 0 1080 1740">
+          <polygon points="0,300 160,200 300,250 460,120 600,220 760,150 900,240 1080,180 1080,1740 0,1740" fill="#BFD6D6"/>
+          <polygon points="0,420 200,340 420,400 640,320 860,390 1080,340 1080,1740 0,1740" fill="#2D7E86"/>
+          <polygon points="0,560 240,500 520,540 800,490 1080,540 1080,1740 0,1740" fill="#13505C"/>
+          <g id="s3aTreesBack"></g>
+          <g id="s3aCottages"></g>
+          <g id="s3aTreesFront"></g>
+        </svg>
+      </div>
+      <div class="abs" style="left:0;bottom:0;width:1080px;height:900px;background:linear-gradient(180deg,rgba(10,44,53,0) 0%,rgba(10,44,53,.85) 60%,rgba(10,44,53,.95) 100%)"></div>
+      <div class="abs center kicker gold" id="s3aK" style="top:1250px">Sukkoon Villas</div>
+      <div class="abs center head" id="s3aH" style="top:1310px;font-size:128px">Luxury<br>Cottages</div>
+      <div class="abs center serif" id="s3aS" style="top:1560px;font-size:58px;color:#EBDDC2">tucked in oak &amp; pine forest</div>
+    </div>
+    <!-- panel B: interior -->
+    <div class="abs" id="s3b" style="inset:0">
+      <div class="abs" id="s3bCam" style="inset:0">
+        <svg class="abs" style="left:0;top:0" width="1080" height="1920" viewBox="0 0 1080 1920" id="s3bSvg"></svg>
+      </div>
+      <div class="abs" style="left:0;bottom:0;width:1080px;height:760px;background:linear-gradient(180deg,rgba(10,44,53,0) 0%,rgba(10,44,53,.88) 55%,rgba(10,44,53,.96) 100%)"></div>
+      <div class="abs center kicker gold" id="s3bK" style="top:1250px">Move-in ready</div>
+      <div class="abs center head" id="s3bH" style="top:1310px;font-size:128px">Fully<br>Furnished</div>
+      <div class="abs center serif" id="s3bS" style="top:1560px;font-size:58px;color:#EBDDC2">arrive with just a suitcase</div>
+    </div>
+    <!-- panel C: deck view -->
+    <div class="abs" id="s3c" style="inset:0">
+      <div class="abs" id="s3cCam" style="inset:0">
+        <svg class="abs" style="left:0;top:0" width="1080" height="1920" viewBox="0 0 1080 1920" id="s3cSvg"></svg>
+      </div>
+      <div class="abs" style="left:0;bottom:0;width:1080px;height:760px;background:linear-gradient(180deg,rgba(10,44,53,0) 0%,rgba(10,44,53,.85) 55%,rgba(10,44,53,.96) 100%)"></div>
+      <div class="abs center kicker gold" id="s3cK" style="top:1250px">Every single morning</div>
+      <div class="abs center head" id="s3cH" style="top:1310px;font-size:128px">Himalayan<br>Views</div>
+      <div class="abs center serif" id="s3cS" style="top:1560px;font-size:58px;color:#EBDDC2">from your own private deck</div>
+    </div>
+  </div>
+
+  <!-- ============ S4 LOCATION MAP ============ -->
+  <div class="scene" id="s4">
+    <div class="abs" style="inset:0;background:radial-gradient(ellipse at 50% 55%,#145A68 0%,#0A2C35 70%)"></div>
+    <svg class="abs" id="s4contours" style="left:0;top:0" width="1080" height="1920" viewBox="0 0 1080 1920"></svg>
+    <div class="abs center kicker gold" id="s4k" style="top:250px">Location</div>
+    <div class="abs center head" id="s4h" style="top:310px;font-size:118px">The heart<br>of Kumaon</div>
+    <svg class="abs" id="s4routes" style="left:0;top:0" width="1080" height="1920" viewBox="0 0 1080 1920"></svg>
+    <div class="abs" id="s4pins" style="inset:0"></div>
+  </div>
+
+  <!-- ============ S5 VARIETY ============ -->
+  <div class="scene" id="s5">
+    <div class="abs" style="inset:0;background:linear-gradient(180deg,#0E3F4B 0%,#0A2C35 100%)"></div>
+    <div class="abs center kicker gold" id="s5k" style="top:250px">Pick your pace</div>
+    <div class="abs center head" id="s5h" style="top:310px;font-size:120px">Choose your<br><span class="gold">Sukkoon</span></div>
+    <div class="abs" id="s5c1" style="left:90px;top:620px;width:900px;height:300px"></div>
+    <div class="abs" id="s5c2" style="left:90px;top:960px;width:900px;height:300px"></div>
+    <div class="abs" id="s5ticks" style="left:130px;top:1320px;width:820px"></div>
+  </div>
+
+  <!-- ============ S6 URGENCY ============ -->
+  <div class="scene" id="s6">
+    <div class="abs" style="inset:0;background:#0A2C35"></div>
+    <div class="abs" id="s6vig" style="inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(224,83,63,0) 45%,rgba(224,83,63,.35) 100%)"></div>
+    <div class="abs center" id="s6live" style="top:240px"><span class="pill" style="background:rgba(224,83,63,.15);border:2px solid var(--red);font-size:30px"><span class="dot" id="s6dot"></span>Live booking status</span></div>
+    <div class="abs center head" id="s6h" style="top:360px;font-size:150px">Selling<br><span class="gold">fast</span></div>
+    <div class="abs" id="s6grid" style="left:120px;top:720px;width:840px;height:560px"></div>
+    <div class="abs" id="s6bar" style="left:140px;top:1320px;width:800px;height:26px;border-radius:13px;background:rgba(255,255,255,.12);overflow:hidden">
+      <div id="s6fill" style="height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--gold2));border-radius:13px"></div>
+    </div>
+    <div class="abs" id="s6count" style="left:140px;top:1366px;width:800px;display:flex;justify-content:space-between;font-weight:700;font-size:36px;letter-spacing:.08em">
+      <span>BOOKED</span><span id="s6num">0 / 23</span>
+    </div>
+    <div class="abs center head" id="s6left" style="top:1470px;font-size:132px;color:var(--gold2)">Only <span id="s6leftN">3</span> left</div>
+    <div class="abs center serif" id="s6gone" style="top:1620px;font-size:60px;color:#EBDDC2">Once they're gone, they're gone.</div>
+  </div>
+
+  <!-- ============ S7 CTA ============ -->
+  <div class="scene" id="s7">
+    <div class="abs" style="inset:0;background:var(--cream)"></div>
+    <svg class="abs" id="s7hills" style="left:0;bottom:0" width="1080" height="520" viewBox="0 0 1080 520">
+      <polygon points="0,260 150,150 280,210 430,80 560,190 700,110 860,210 1080,120 1080,520 0,520" fill="#DCE9E8"/>
+      <polygon points="0,360 200,290 420,340 640,270 860,330 1080,290 1080,520 0,520" fill="#B9D3D3"/>
+      <g id="s7pines"></g>
+    </svg>
+    <img class="abs" id="s7logo" src="assets/logo.png" style="left:340px;top:250px;width:400px;mix-blend-mode:multiply">
+    <div class="abs center head" id="s7name" style="top:760px;font-size:150px;color:var(--teal);letter-spacing:.06em">Sukkoon</div>
+    <div class="abs center serif" id="s7tag" style="top:915px;font-size:72px;color:var(--gold)">Invest in peace.</div>
+    <div class="abs center" id="s7btnw" style="top:1080px">
+      <span id="s7btn" style="position:relative;overflow:hidden;display:inline-block;padding:36px 70px;border-radius:80px;background:var(--gold);color:#fff;font-weight:800;font-size:46px;letter-spacing:.08em;box-shadow:0 18px 40px rgba(198,138,46,.35)">
+        BOOK YOUR SITE VISIT
+        <span id="s7shine" style="position:absolute;top:-20px;left:-200px;width:90px;height:200px;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.55),rgba(255,255,255,0));transform:rotate(20deg)"></span>
+      </span>
+    </div>
+    <div class="abs center" id="s7dm" style="top:1250px;font-size:44px;font-weight:700;color:var(--teal)">DM &ldquo;SUKKOON&rdquo; &middot; gargrealtygroup.com</div>
+    <div class="abs center kicker" id="s7loc" style="top:1330px;font-size:26px;color:#7C8C8E">Limited cottages &middot; Pangot, Nainital</div>
+    <div class="abs center" id="s7disc" style="top:1850px;font-size:20px;color:#5F7F82">Illustrations are for representation only. T&amp;C apply.</div>
+  </div>
+
+  <div class="abs" id="flash" style="inset:0;background:#fff;opacity:0;pointer-events:none"></div>
+</div>
+
+<script>
+// ---------------------------------------------------------------
+// Config (edit these before a final render)
+const CFG = { TOTAL: 23, LEFT: 3 };
+// ---------------------------------------------------------------
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const lerp=(a,b,p)=>a+(b-a)*p;
+const P=(t,a,b)=>clamp((t-a)/(b-a));
+const eo=p=>1-Math.pow(1-p,3);
+const eio=p=>p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;
+const eback=p=>{const c1=1.9,c3=c1+1;return 1+c3*Math.pow(p-1,3)+c1*Math.pow(p-1,2)};
+const $=id=>document.getElementById(id);
+const NS='http://www.w3.org/2000/svg';
+function st(el,o){if(typeof el==='string')el=$(el);for(const k in o)el.style[k]=o[k];}
+function rng(seed){let s=seed>>>0;return()=>{s=(s*1664525+1013904223)>>>0;return s/4294967296;};}
+
+// Text reveal: rise + fade in at `a`, optional exit at `out`
+function rise(id,t,a,dur=.55,dy=70,out=null,outDur=.35){
+  const p=eo(P(t,a,a+dur));let o=p,y=(1-p)*dy;
+  if(out!==null){const q=eio(P(t,out,out+outDur));o*=1-q;y-=q*50;}
+  st(id,{opacity:o,transform:`translateY(${y}px)`});
+}
+function pop(id,t,a,dur=.5,out=null){
+  const p=P(t,a,a+dur);const s=p<=0?0:eback(p);let o=clamp(p*3);
+  if(out!==null)o*=1-P(t,out,out+.3);
+  st(id,{opacity:o,transform:`scale(${s})`});
+}
+
+// ---------- builders ----------
+function pine(x,y,h,col){
+  const g=document.createElementNS(NS,'g');
+  const w=h*.42;
+  for(let i=0;i<3;i++){
+    const p=document.createElementNS(NS,'polygon');
+    const ty=y-h+i*h*.26, by=ty+h*.45, ww=w*(0.55+i*0.25);
+    p.setAttribute('points',`${x},${ty} ${x-ww/2},${by} ${x+ww/2},${by}`);
+    p.setAttribute('fill',col);g.appendChild(p);
+  }
+  const tr=document.createElementNS(NS,'rect');
+  tr.setAttribute('x',x-h*.03);tr.setAttribute('y',y-h*.06);tr.setAttribute('width',h*.06);tr.setAttribute('height',h*.1);tr.setAttribute('fill',col);
+  g.appendChild(tr);return g;
+}
+function forest(gid,n,y0,y1,h0,h1,col,seed,x0=-20,x1=1100){
+  const g=$(gid),r=rng(seed);
+  const items=[];
+  for(let i=0;i<n;i++)items.push({x:lerp(x0,x1,(i+r()*.8)/n),y:lerp(y0,y1,r()),h:lerp(h0,h1,r())});
+  items.sort((a,b)=>a.y-b.y).forEach(it=>g.appendChild(pine(it.x,it.y,it.h,col)));
+}
+// Luxury A-frame / pitched cottage with deck and glowing windows
+function cottage(x,y,s,wall='#6B4A35',roof='#2E3A3F',glow='#FFC766'){
+  const g=document.createElementNS(NS,'g');
+  g.setAttribute('transform',`translate(${x},${y}) scale(${s})`);
+  g.innerHTML=`
+    <ellipse cx="0" cy="8" rx="150" ry="14" fill="rgba(0,0,0,.25)"/>
+    <rect x="-120" y="-70" width="240" height="80" fill="${wall}"/>
+    <rect x="-120" y="-70" width="240" height="80" fill="url(#none)" stroke="rgba(0,0,0,.15)" stroke-width="2"/>
+    <g stroke="rgba(0,0,0,.18)" stroke-width="2">${[...Array(7)].map((_,i)=>`<line x1="-120" x2="120" y1="${-60+i*10}" y2="${-60+i*10}"/>`).join('')}</g>
+    <polygon points="-150,-66 0,-190 150,-66" fill="${roof}"/>
+    <polygon points="-150,-66 0,-190 0,-176 -132,-66" fill="rgba(255,255,255,.08)"/>
+    <polygon points="-70,-70 0,-150 70,-70" fill="${glow}" class="glow"/>
+    <line x1="0" y1="-150" x2="0" y2="-70" stroke="${wall}" stroke-width="5"/>
+    <line x1="-35" y1="-110" x2="35" y2="-110" stroke="${wall}" stroke-width="5"/>
+    <rect x="-100" y="-50" width="60" height="50" fill="${glow}" class="glow"/>
+    <rect x="40" y="-50" width="60" height="50" fill="${glow}" class="glow"/>
+    <rect x="-22" y="-50" width="44" height="60" fill="#3A2718"/>
+    <rect x="-150" y="10" width="300" height="12" fill="#4A3324"/>
+    <g stroke="#4A3324" stroke-width="5">${[...Array(9)].map((_,i)=>`<line x1="${-145+i*36}" x2="${-145+i*36}" y1="-18" y2="10"/>`).join('')}</g>
+    <line x1="-150" x2="150" y1="-18" y2="-18" stroke="#4A3324" stroke-width="5"/>
+    <rect x="-150" y="22" width="10" height="30" fill="#3A2718"/><rect x="140" y="22" width="10" height="30" fill="#3A2718"/>`;
+  return g;
+}
+
+function buildS1(){
+  const r=rng(7),grid=$('s1grid');
+  for(let i=0;i<22;i++){
+    const d=document.createElement('div');const sz=[34,44,56][Math.floor(r()*3)];
+    d.className='abs sq';d.dataset.ph=r()*6;
+    st(d,{left:Math.floor(r()*18)*60+'px',top:(Math.floor(r()*28)*60+40)+'px',width:sz+'px',height:sz+'px',
+      background:r()<.6?'rgba(198,138,46,.55)':'transparent',border:'2px solid rgba(198,138,46,.45)'});
+    grid.appendChild(d);
+  }
+  forest('s1pines',26,470,690,90,180,'#082830',11);
+}
+function buildS2(){
+  forest('s2pines',30,830,1100,110,230,'#0A3640',21);
+  const mist=$('s2mist');
+  [[-200,1180,900,160,.35],[300,1290,1000,180,.28],[-100,1420,1200,220,.22],[500,1520,900,200,.25]].forEach((m,i)=>{
+    const d=document.createElement('div');d.className='abs mist';d.dataset.i=i;d.dataset.x=m[0];
+    st(d,{left:'0px',top:m[1]+'px',width:m[2]+'px',height:m[3]+'px',borderRadius:'50%',background:`rgba(255,255,255,${m[4]})`,filter:'blur(40px)'});
+    mist.appendChild(d);
+  });
+  const birds=$('s2birds');
+  for(let i=0;i<5;i++){
+    const d=document.createElement('div');d.className='abs bird';d.dataset.i=i;
+    d.innerHTML=`<svg width="60" height="30" viewBox="0 0 60 30"><path d="M2 18 Q15 4 30 16 Q45 4 58 18" fill="none" stroke="#0A2C35" stroke-width="4" stroke-linecap="round"/></svg>`;
+    birds.appendChild(d);
+  }
+}
+function buildS3(){
+  forest('s3aTreesBack',22,520,620,120,220,'#0E4450',31);
+  const cg=$('s3aCottages');
+  [[250,760,.95],[620,700,.72],[880,800,.85],[450,930,1.25]].forEach(c=>cg.appendChild(cottage(...c)));
+  forest('s3aTreesFront',9,1250,1560,320,480,'#082830',41,-80,1160);
+
+  // interior
+  $('s3bSvg').innerHTML=`
+    <defs>
+      <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8A6446"/><stop offset="1" stop-color="#5E412C"/></linearGradient>
+      <linearGradient id="win" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9CC8D6"/><stop offset=".55" stop-color="#F6D7A6"/><stop offset="1" stop-color="#F2C07A"/></linearGradient>
+      <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A0724D"/><stop offset="1" stop-color="#6B4A33"/></linearGradient>
+    </defs>
+    <rect width="1080" height="1920" fill="url(#wall)"/>
+    ${[...Array(14)].map((_,i)=>`<line x1="0" x2="1080" y1="${80+i*90}" y2="${80+i*90}" stroke="rgba(0,0,0,.12)" stroke-width="3"/>`).join('')}
+    <polygon points="0,0 540,-120 1080,0 1080,140 540,40 0,140" fill="#3E2A1D"/>
+    <!-- big window -->
+    <rect x="130" y="230" width="820" height="820" rx="6" fill="url(#win)"/>
+    <polygon points="130,760 260,640 350,690 470,560 560,470 640,560 720,520 820,610 950,560 950,1050 130,1050" fill="#EEF4F4"/>
+    <polygon points="470,560 520,600 560,470 590,540 640,560" fill="#fff"/>
+    <polygon points="130,870 300,800 480,850 660,790 820,840 950,810 950,1050 130,1050" fill="#3F8C95"/>
+    <polygon points="130,960 320,920 520,950 760,910 950,940 950,1050 130,1050" fill="#1B5A66"/>
+    <rect x="130" y="230" width="820" height="820" fill="none" stroke="#2E1E14" stroke-width="26"/>
+    <line x1="540" y1="230" x2="540" y2="1050" stroke="#2E1E14" stroke-width="18"/>
+    <!-- floor -->
+    <rect y="1150" width="1080" height="770" fill="url(#floor)"/>
+    ${[...Array(9)].map((_,i)=>`<line x1="${-400+i*220}" y1="1920" x2="${340+i*50}" y2="1150" stroke="rgba(0,0,0,.14)" stroke-width="3"/>`).join('')}
+    <!-- rug -->
+    <ellipse cx="540" cy="1420" rx="470" ry="120" fill="#C9B79A"/>
+    <ellipse cx="540" cy="1420" rx="400" ry="92" fill="none" stroke="#12697A" stroke-width="10"/>
+    <!-- bed -->
+    <rect x="160" y="1000" width="760" height="70" rx="14" fill="#3A2718"/>
+    <rect x="130" y="1060" width="820" height="240" rx="24" fill="#F4EEE4"/>
+    <rect x="130" y="1180" width="820" height="120" rx="20" fill="#12697A"/>
+    <rect x="130" y="1180" width="820" height="18" fill="#C68A2E"/>
+    <rect x="200" y="1020" width="280" height="110" rx="40" fill="#FFFFFF"/>
+    <rect x="600" y="1020" width="280" height="110" rx="40" fill="#FFFFFF"/>
+    <rect x="380" y="1050" width="320" height="90" rx="30" fill="#C68A2E"/>
+    <!-- lamps -->
+    <rect x="40" y="1080" width="80" height="140" fill="#2E1E14"/>
+    <polygon points="30,930 130,930 110,1000 50,1000" fill="#F6C56A" class="lamp"/>
+    <rect x="76" y="1000" width="8" height="80" fill="#2E1E14"/>
+    <rect x="960" y="1080" width="80" height="140" fill="#2E1E14"/>
+    <polygon points="950,930 1050,930 1030,1000 970,1000" fill="#F6C56A" class="lamp"/>
+    <rect x="996" y="1000" width="8" height="80" fill="#2E1E14"/>
+    <circle cx="80" cy="960" r="160" fill="rgba(255,200,110,.18)" class="lamp"/>
+    <circle cx="1000" cy="960" r="160" fill="rgba(255,200,110,.18)" class="lamp"/>`;
+
+  // deck with coffee + peaks
+  $('s3cSvg').innerHTML=`
+    <defs>
+      <linearGradient id="dsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2B6F7D"/><stop offset=".45" stop-color="#8FC0C4"/><stop offset=".7" stop-color="#F7D6A0"/><stop offset="1" stop-color="#F3BE78"/></linearGradient>
+      <linearGradient id="dsnow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".5" stop-color="#E4EEEF"/><stop offset="1" stop-color="#A9CBD0"/></linearGradient>
+    </defs>
+    <rect width="1080" height="1920" fill="url(#dsky)"/>
+    <circle cx="760" cy="760" r="120" fill="#FFE2A6" opacity=".9"/>
+    <g id="dpeaks"><polygon points="0,900 120,760 220,820 360,600 450,680 540,520 640,650 740,590 860,700 980,620 1080,690 1080,1100 0,1100" fill="url(#dsnow)"/></g>
+    <g id="dclouds">
+      <ellipse cx="200" cy="1010" rx="360" ry="70" fill="#fff" opacity=".85"/>
+      <ellipse cx="700" cy="1040" rx="420" ry="80" fill="#fff" opacity=".9"/>
+      <ellipse cx="1000" cy="990" rx="260" ry="60" fill="#fff" opacity=".8"/>
+      <ellipse cx="460" cy="1080" rx="600" ry="70" fill="#F6EEE2"/>
+    </g>
+    <rect y="1080" width="1080" height="200" fill="#F3E9DA"/>
+    <polygon points="0,1150 300,1100 620,1140 1080,1090 1080,1300 0,1300" fill="#2F7E86"/>
+    <!-- deck railing -->
+    <rect y="1200" width="1080" height="24" fill="#4A3324"/>
+    ${[...Array(13)].map((_,i)=>`<rect x="${10+i*86}" y="1224" width="16" height="200" fill="#4A3324"/>`).join('')}
+    <rect y="1420" width="1080" height="500" fill="#6B4A33"/>
+    ${[...Array(7)].map((_,i)=>`<rect y="${1440+i*70}" width="1080" height="6" fill="rgba(0,0,0,.18)"/>`).join('')}
+    <!-- table + coffee -->
+    <ellipse cx="560" cy="1560" rx="230" ry="44" fill="#3A2718"/>
+    <rect x="545" y="1580" width="30" height="200" fill="#3A2718"/>
+    <rect x="490" y="1480" width="90" height="80" rx="10" fill="#F4EEE4"/>
+    <path d="M580 1500 q40 0 40 25 q0 25 -40 25" fill="none" stroke="#F4EEE4" stroke-width="12"/>
+    <ellipse cx="535" cy="1482" rx="45" ry="10" fill="#6B4027"/>
+    <g id="steam" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round" opacity=".7">
+      <path d="M515 1460 q-15 -30 0 -60 q15 -30 0 -60"/><path d="M555 1460 q-15 -30 0 -60 q15 -30 0 -60"/>
+    </g>
+    <!-- chair -->
+    <rect x="160" y="1480" width="200" height="30" rx="8" fill="#12697A"/>
+    <rect x="170" y="1380" width="30" height="130" fill="#3A2718"/>
+    <rect x="160" y="1510" width="18" height="140" fill="#3A2718"/><rect x="342" y="1510" width="18" height="140" fill="#3A2718"/>`;
+}
+
+function iconSVG(kind){
+  const c='#0A2C35';
+  if(kind==='lake')return `<svg width="90" height="90" viewBox="0 0 90 90"><path d="M10 58 q12-8 24 0 t24 0 t24 0" fill="none" stroke="${c}" stroke-width="6" stroke-linecap="round"/><path d="M10 72 q12-8 24 0 t24 0 t24 0" fill="none" stroke="${c}" stroke-width="6" stroke-linecap="round"/><path d="M30 46 h32 l-6 8 h-20z" fill="${c}"/><path d="M46 18 v26 M46 20 l14 18 h-14" fill="${c}" stroke="${c}" stroke-width="4"/></svg>`;
+  if(kind==='temple')return `<svg width="90" height="90" viewBox="0 0 90 90"><path d="M45 8 v8" stroke="${c}" stroke-width="4"/><path d="M45 10 l12 5 l-12 5z" fill="${c}"/><path d="M45 20 C 30 32 28 46 28 56 h34 C 62 46 60 32 45 20z" fill="${c}"/><rect x="18" y="56" width="54" height="10" fill="${c}"/><rect x="24" y="66" width="42" height="16" fill="${c}"/><rect x="40" y="70" width="10" height="12" fill="#E3AC4E"/></svg>`;
+  if(kind==='tiger')return `<svg width="90" height="90" viewBox="0 0 90 90"><ellipse cx="45" cy="58" rx="16" ry="14" fill="${c}"/><ellipse cx="22" cy="38" rx="8" ry="10" fill="${c}"/><ellipse cx="36" cy="26" rx="8" ry="10" fill="${c}"/><ellipse cx="54" cy="26" rx="8" ry="10" fill="${c}"/><ellipse cx="68" cy="38" rx="8" ry="10" fill="${c}"/></svg>`;
+  return `<svg width="90" height="90" viewBox="0 0 90 90"><path d="M14 52 q16 -4 26 -18 q6 -10 16 -10 q8 0 12 6 l10 2 l-10 5 q0 20 -22 26 q-14 4 -32 -11z" fill="${c}"/><circle cx="58" cy="30" r="3" fill="#E3AC4E"/><path d="M36 50 l-14 22 M44 52 l-4 22" stroke="${c}" stroke-width="4"/></svg>`;
+}
+const MAP={pin:[540,1080],dests:[
+  {id:'d1',x:830,y:1380,icon:'lake',t:'NAINITAL',s:'Naini Lake &middot; 15 km'},
+  {id:'d2',x:850,y:780,icon:'temple',t:'KAINCHI DHAM',s:'Neem Karoli Baba ashram'},
+  {id:'d3',x:240,y:1400,icon:'tiger',t:'JIM CORBETT',s:'Tiger country'},
+  {id:'d4',x:230,y:790,icon:'bird',t:'580+ BIRD SPECIES',s:'Naina Devi Bird Reserve'},
+]};
+function buildS4(){
+  const cont=$('s4contours');let h='';
+  for(let i=0;i<9;i++)h+=`<ellipse cx="540" cy="1080" rx="${140+i*95}" ry="${90+i*70}" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="3"/>`;
+  cont.innerHTML=h;
+  const routes=$('s4routes');const [px,py]=MAP.pin;let rh='';
+  MAP.dests.forEach((d,i)=>{
+    const mx=(px+d.x)/2+(i%2?-120:120),my=(py+d.y)/2+(i<2?-40:40);
+    rh+=`<path id="r${i}" d="M${px} ${py} Q${mx} ${my} ${d.x} ${d.y}" fill="none" stroke="#E3AC4E" stroke-width="7" stroke-linecap="round" stroke-dasharray="4 18"/>`;
+  });
+  routes.innerHTML=rh;
+  const pins=$('s4pins');
+  let ph=`<div class="abs" id="pinw" style="left:${px-80}px;top:${py-80}px;width:160px;height:160px">
+      <div class="abs ring" style="inset:0;border-radius:50%;border:4px solid #E3AC4E"></div>
+      <div class="abs ring" style="inset:0;border-radius:50%;border:4px solid #E3AC4E"></div>
+      <div class="abs" style="left:45px;top:45px;width:70px;height:70px;border-radius:50%;background:#E3AC4E;box-shadow:0 0 40px #E3AC4E"></div>
+      <div class="abs" style="left:65px;top:65px;width:30px;height:30px;border-radius:50%;background:#0A2C35"></div>
+    </div>
+    <div class="abs" id="pinlab" style="left:${px-250}px;top:${py+95}px;width:500px;text-align:center">
+      <div class="head" style="font-size:52px">Sukkoon</div><div style="font-weight:700;letter-spacing:.25em;font-size:24px;color:#E3AC4E">PANGOT</div></div>`;
+  MAP.dests.forEach(d=>{
+    ph+=`<div class="abs" id="${d.id}" style="left:${d.x-150}px;top:${d.y-65}px;width:300px;text-align:center">
+      <div style="width:130px;height:130px;margin:0 auto;border-radius:50%;background:#F5EFE3;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 8px rgba(227,172,78,.35)">${iconSVG(d.icon)}</div>
+      <div style="font-weight:800;font-size:34px;letter-spacing:.08em;margin-top:18px">${d.t}</div>
+      <div class="serif" style="font-size:32px;color:#E3D3B5;margin-top:4px">${d.s}</div></div>`;
+  });
+  pins.innerHTML=ph;
+}
+function buildS5(){
+  const card=(title,sub,tag,kind)=>`
+    <div style="display:flex;height:300px;border-radius:28px;overflow:hidden;background:#F5EFE3;color:#0A2C35;box-shadow:0 20px 50px rgba(0,0,0,.35)">
+      <div style="width:300px;height:300px;flex:none;position:relative;background:${kind===1?'linear-gradient(180deg,#4E9AA0,#F2C88A)':'linear-gradient(180deg,#2B6F7D,#F7D6A0)'}">
+        <svg width="300" height="300" viewBox="0 0 300 300">
+          <polygon points="0,170 70,110 130,150 200,80 300,150 300,300 0,300" fill="#E9F1F1"/>
+          <polygon points="0,230 100,200 200,220 300,195 300,300 0,300" fill="#13505C"/>
+          <g transform="translate(150,262) scale(${kind===1?.62:.82})">${cottage(0,0,1).innerHTML}</g>
+        </svg>
+      </div>
+      <div style="padding:44px 40px;display:flex;flex-direction:column;justify-content:center">
+        <div style="font-weight:800;font-size:24px;letter-spacing:.24em;color:#C68A2E">${tag}</div>
+        <div class="head" style="font-size:66px;margin-top:10px;color:#12697A">${title}</div>
+        <div class="serif" style="font-size:36px;margin-top:14px;color:#3F5559">${sub}</div>
+      </div>
+    </div>`;
+  $('s5c1').innerHTML=card('Studio<br>Cottage','Cosy, fully furnished retreat','For two',1);
+  $('s5c2').innerHTML=card('3 BHK<br>Cottage','Room for the whole family','For families',2);
+  const ticks=['Hotel-managed &middot; zero upkeep','Rooftop &amp; loft lounges','24/7 resident services'];
+  $('s5ticks').innerHTML=ticks.map((x,i)=>`<div id="tk${i}" style="display:flex;align-items:center;gap:26px;margin:0 0 30px;font-size:42px;font-weight:600">
+    <span style="flex:none;width:58px;height:58px;border-radius:50%;background:#C68A2E;display:flex;align-items:center;justify-content:center">
+      <svg width="30" height="30" viewBox="0 0 30 30"><path d="M5 16 l7 7 l13 -15" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>${x}</div>`).join('');
+}
+// Sold schedule (mirrored in music.py): SOLD = TOTAL-LEFT houses, accelerating from 27.0s to 31.0s
+function soldTimes(){const n=CFG.TOTAL-CFG.LEFT,out=[];for(let i=0;i<n;i++)out.push(27.0+4.0*Math.sqrt(i/(n-1)));return out;}
+let SOLD_ORDER=[];
+function buildS6(){
+  const g=$('s6grid');const cols=6,cw=140,chh=140;
+  let h='';
+  for(let i=0;i<CFG.TOTAL;i++){
+    const r=Math.floor(i/cols),c=i%cols;
+    const rowCount=Math.min(cols,CFG.TOTAL-r*cols);const off=(cols-rowCount)*cw/2;
+    h+=`<div class="abs hs" id="h${i}" style="left:${off+c*cw}px;top:${r*chh}px;width:${cw}px;height:${chh}px">
+      <svg class="abs" width="140" height="140" viewBox="0 0 140 140">
+        <path class="ho" d="M22 66 L70 26 L118 66 V118 H22 Z" fill="none" stroke="rgba(255,255,255,.75)" stroke-width="6" stroke-linejoin="round"/>
+        <path class="hf" d="M22 66 L70 26 L118 66 V118 H22 Z" fill="#E3AC4E" opacity="0"/>
+        <rect class="hd" x="60" y="86" width="20" height="32" fill="rgba(255,255,255,.75)"/>
+      </svg>
+      <div class="abs stamp" style="left:14px;top:70px;width:112px;text-align:center;font-weight:900;font-size:26px;letter-spacing:.1em;color:#fff;background:#E0533F;border-radius:6px;padding:4px 0;opacity:0">SOLD</div>
+    </div>`;
+  }
+  g.innerHTML=h;
+  const r=rng(99);const idx=[...Array(CFG.TOTAL).keys()];
+  for(let i=idx.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[idx[i],idx[j]]=[idx[j],idx[i]];}
+  SOLD_ORDER=idx.slice(0,CFG.TOTAL-CFG.LEFT);
+  $('s6leftN').textContent=CFG.LEFT;
+}
+function buildS7(){forest('s7pines',24,360,520,70,140,'#8DB5B6',71);}
+
+// ---------- scene timing ----------
+const SC={s1:[0,3.15],s2:[3.0,8.3],s3:[8.15,15.35],s4:[15.2,21.7],s5:[21.55,26.35],s6:[26.2,34.7],s7:[34.55,40.5]};
+const XF=.3;
+function sceneAlpha(t,[a,b]){return clamp((t-a)/XF+ (a===0?1:0))*clamp((b-t)/XF);}
+
+function render(t){
+  for(const k in SC){const al=sceneAlpha(t,SC[k]);$(k).style.opacity=al;$(k).style.display=al>0?'block':'none';}
+
+  // ---- S1 ----
+  if(t<3.4){
+    document.querySelectorAll('#s1grid .sq').forEach(d=>{const ph=+d.dataset.ph;d.style.opacity=.25+.55*Math.max(0,Math.sin(t*3+ph));});
+    rise('s1k',t,.05,.4,40);
+    rise('s1only',t,.2,.35,60);
+    const p=P(t,.42,.72);const s=p<=0?2.6:lerp(2.6,1,eback(p));
+    const shake=t>.72&&t<1.0?Math.sin(t*120)*10*(1-P(t,.72,1.0)):0;
+    st('s1num',{opacity:clamp(p*4),transform:`translateX(${shake}px) scale(${s})`});
+    rise('s1cot',t,.8,.4,60);
+    rise('s1sub',t,1.15,.45,40);
+    pop('s1pillw',t,1.6,.45);
+    $('s1dot').style.opacity=.35+.65*(Math.sin(t*14)>0?1:0);
+    const zo=eio(P(t,2.85,3.15));
+    st('s1',{transform:`scale(${1+zo*.25})`});
+    st('s1hills',{transform:`translateY(${(1-eo(P(t,0,1.2)))*200}px)`});
+  }
+  // ---- S2 ----
+  if(t>2.9&&t<8.5){
+    const lt=t-3.0;
+    const up=eo(P(lt,0,2.2));
+    st('s2land',{transform:`translateY(${(1-up)*380}px) scale(${1.08-0.08*P(lt,0,5.3)})`});
+    st('s2sun',{top:lerp(1330,1060,eo(P(lt,0,4)))+'px'});
+    document.querySelectorAll('#s2mist .mist').forEach(d=>{const i=+d.dataset.i;d.style.transform=`translateX(${+d.dataset.x+(i%2?-1:1)*lt*55}px)`;});
+    document.querySelectorAll('#s2birds .bird').forEach(d=>{const i=+d.dataset.i;const x=-100+(lt*190)+i*70;const y=880+i*28+Math.sin(lt*2+i)*14;
+      d.style.transform=`translate(${x}px,${y}px) scaleY(${.6+.4*Math.abs(Math.sin(lt*9+i))}) scale(${1-i*.1})`;d.style.opacity=clamp((lt-.8)*2);});
+    rise('s2k',t,3.25,.45,40);
+    const cp=eo(P(t,3.4,5.0));st('s2num',{opacity:clamp((t-3.4)*3),transform:`scale(${lerp(.9,1,cp)})`});
+    $('s2num').textContent=Math.round(1900*cp).toLocaleString('en-IN')+' M';
+    rise('s2sub',t,4.4,.5,50);
+    rise('s2lab1',t,5.3,.5,40);rise('s2lab2',t,5.7,.5,40);
+  }
+  // ---- S3 ----
+  if(t>8.0&&t<15.6){
+    const panels=[['s3a',8.15,10.65],['s3b',10.55,13.05],['s3c',12.95,15.4]];
+    panels.forEach(([id,a,b],i)=>{
+      const wipe=i===0?1:eio(P(t,a,a+.45));
+      st(id,{clipPath:`inset(${(1-wipe)*100}% 0 0 0)`,display:(t>a-.01&&t<b+.5)?'block':'none'});
+      const kb=P(t,a,b+.3);
+      st(id+'Cam',{transform:`scale(${1.14-.12*kb}) translateY(${-20*kb}px)`});
+      rise(id+'K',t,a+.3,.4,40);rise(id+'H',t,a+.4,.45,70);rise(id+'S',t,a+.65,.45,40);
+    });
+    const glow=.85+.15*Math.sin(t*6);
+    document.querySelectorAll('#s3 .glow').forEach(e=>e.setAttribute('opacity',glow));
+    document.querySelectorAll('#s3 .lamp').forEach(e=>e.setAttribute('opacity',.8+.2*Math.sin(t*5)));
+    const stm=$('steam');if(stm){stm.setAttribute('transform',`translate(0 ${-((t*40)%40)})`);stm.setAttribute('opacity',.35+.35*Math.sin(t*3));}
+    const cl=$('dclouds');if(cl)cl.setAttribute('transform',`translate(${(t-12.9)*-25} 0)`);
+  }
+  // ---- S4 ----
+  if(t>15.0&&t<21.9){
+    rise('s4k',t,15.4,.4,40);rise('s4h',t,15.5,.5,60);
+    pop('pinw',t,15.8,.5);rise('pinlab',t,16.0,.4,30);
+    document.querySelectorAll('#pinw .ring').forEach((r,i)=>{const ph=((t-15.8)*.9+i*.5)%1;r.style.transform=`scale(${1+ph*1.6})`;r.style.opacity=(t>15.8)?(1-ph)*.8:0;});
+    MAP.dests.forEach((d,i)=>{
+      const a=16.3+i*.75;const path=$('r'+i);const L=path.getTotalLength();
+      const p=eio(P(t,a,a+.6));
+      path.style.strokeDasharray=`${L*p} ${L}`;path.style.opacity=p>0?1:0;
+      pop(d.id,t,a+.5,.5);
+    });
+    st('s4routes',{opacity:1});
+  }
+  // ---- S5 ----
+  if(t>21.4&&t<26.6){
+    rise('s5k',t,21.8,.4,40);rise('s5h',t,21.9,.5,60);
+    const c1=eo(P(t,22.4,22.9)),c2=eo(P(t,22.8,23.3));
+    st('s5c1',{opacity:c1,transform:`translateX(${(1-c1)*-700}px)`});
+    st('s5c2',{opacity:c2,transform:`translateX(${(1-c2)*700}px)`});
+    [0,1,2].forEach(i=>{const p=eo(P(t,23.6+i*.45,24.0+i*.45));st('tk'+i,{opacity:p,transform:`translateX(${(1-p)*80}px)`});});
+  }
+  // ---- S6 ----
+  if(t>26.0&&t<35.0){
+    st('s6vig',{opacity:.35+.35*Math.max(0,Math.sin(t*6.3))*P(t,27,31)+.3*P(t,31.3,31.6)});
+    $('s6dot').style.opacity=Math.sin(t*14)>0?1:.25;
+    pop('s6live',t,26.35,.4);rise('s6h',t,26.45,.45,60);
+    const times=soldTimes();let n=0;
+    for(let i=0;i<CFG.TOTAL;i++){const el=$('h'+i);el.style.opacity=clamp((t-26.5-i*.02)*4);}
+    SOLD_ORDER.forEach((hi,k)=>{
+      const ts=times[k];const el=$('h'+hi);const p=P(t,ts,ts+.18);
+      if(t>=ts)n++;
+      el.querySelector('.hf').setAttribute('opacity',p);
+      el.querySelector('.hd').setAttribute('fill',p>.5?'#0A2C35':'rgba(255,255,255,.75)');
+      const sp=P(t,ts,ts+.22);const stp=el.querySelector('.stamp');
+      stp.style.opacity=sp;stp.style.transform=`scale(${sp>0?lerp(1.8,1,eo(sp)):1}) rotate(-8deg)`;
+    });
+    // remaining houses pulse after 31.3
+    const soldSet=new Set(SOLD_ORDER);
+    for(let i=0;i<CFG.TOTAL;i++)if(!soldSet.has(i)){const el=$('h'+i);const pl=P(t,31.3,31.5)*(.5+.5*Math.sin(t*9));
+      el.style.filter=`drop-shadow(0 0 ${pl*24}px #E3AC4E)`;el.style.transform=`scale(${1+pl*.08})`;}
+    $('s6num').textContent=`${n} / ${CFG.TOTAL}`;
+    st('s6fill',{width:(n/CFG.TOTAL*100)+'%'});
+    rise('s6bar',t,26.8,.4,20);rise('s6count',t,26.9,.4,20);
+    const lp=P(t,31.3,31.6);st('s6left',{opacity:clamp(lp*3),transform:`scale(${lp<=0?2.2:lerp(2.2,1,eback(lp))})`});
+    rise('s6gone',t,32.3,.5,40);
+  }
+  // ---- S7 ----
+  if(t>34.4){
+    const lp=P(t,34.75,35.35);st('s7logo',{opacity:clamp(lp*2),transform:`translateY(${(1-eo(lp))*40}px) scale(${lerp(.85,1,eo(lp))})`});
+    rise('s7name',t,35.2,.5,50);rise('s7tag',t,35.5,.5,40);
+    pop('s7btnw',t,36.0,.55);
+    const sh=((t-36.8)%1.6)/1.6;$('s7shine').style.left=(t>36.8?lerp(-200,900,sh):-200)+'px';
+    rise('s7dm',t,36.4,.45,30);rise('s7loc',t,36.7,.45,20);rise('s7disc',t,37.0,.4,10);
+    st('s7hills',{transform:`translateY(${(1-eo(P(t,34.6,35.6)))*200}px)`});
+  }
+  // white flash on impacts
+  const fl=(a)=>Math.max(0,1-Math.abs(t-a)/.12)*.0+ (t>=a&&t<a+.25?(1-(t-a)/.25):0);
+  st('flash',{opacity:Math.max(fl(.45)*.35,fl(31.3)*.25,fl(34.55)*.5)});
+}
+
+buildS1();buildS2();buildS3();buildS4();buildS5();buildS6();buildS7();
+window.render=render;
+window.READY=true;
+// live preview when opened directly
+if(!/render=1/.test(location.search)){const t0=performance.now();(function loop(){render(((performance.now()-t0)/1000)%40);requestAnimationFrame(loop);})();}
+</script>
+</body>
+</html>
