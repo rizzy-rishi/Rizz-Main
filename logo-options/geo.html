@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>GRG Integrated Geometric</title>
+<style>
+@font-face{font-family:JosB;src:url(fonts/Josefin_Sans_wght_700_.ttf)}
+@font-face{font-family:MontL;src:url(fonts/Montserrat_wght_300_.ttf)}
+body{margin:0;background:#777;display:flex;flex-wrap:wrap;gap:20px;padding:20px}
+.card{position:relative;width:1200px;height:1200px;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.em{display:block}
+.tag{font-family:JosB;letter-spacing:.42em;padding-left:.42em;text-transform:uppercase;font-size:30px}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+// ---------------- glyph system (cap height 280, stroke 70) ----------------
+const TEAL='#11687A',TEAL2='#1B8C9E',GOLD='#C88828',CREAM='#EFE8DA';
+const H=280,SW=70;
+function G(ox,{body='url(#bronze)',bar='url(#bronze)',barExtra=''}={}){
+  const cx=ox+140,cy=140,r=105,a=40*Math.PI/180;
+  const sx=cx+r*Math.cos(a),sy=cy-r*Math.sin(a);
+  return `<path d="M${sx.toFixed(1)} ${sy.toFixed(1)} A${r} ${r} 0 1 0 ${cx+r} ${cy}" fill="none" stroke="${body}" stroke-width="${SW}"/>
+          <rect x="${cx+6}" y="${cy-32}" width="${134}" height="64" fill="${bar}"/>${barExtra}`;
+}
+function R(ox,{stem='url(#bronze)',bowl='url(#bronze)',leg='url(#bronze)'}={}){
+  return `<rect x="${ox}" y="0" width="${SW}" height="${H}" fill="${stem}"/>
+    <path d="M${ox+35} 35 H${ox+158} A62 62 0 0 1 ${ox+158} 159 H${ox+35}" fill="none" stroke="${bowl}" stroke-width="${SW}"/>
+    <polygon points="${ox+118},165 ${ox+198},165 ${ox+272},${H} ${ox+192},${H}" fill="${leg}"/>`;
+}
+const DEFS=`<defs>
+  <linearGradient id="bronze" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E2B056"/><stop offset=".55" stop-color="#C88828"/><stop offset="1" stop-color="#9C6418"/></linearGradient>
+  <linearGradient id="foil" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FCE7A8"/><stop offset=".3" stop-color="#E8B45A"/><stop offset=".55" stop-color="#A8701E"/><stop offset=".78" stop-color="#F4D185"/><stop offset="1" stop-color="#C88828"/></linearGradient>
+  <linearGradient id="tealg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1B8C9E"/><stop offset="1" stop-color="#0B4F5E"/></linearGradient>
+  <linearGradient id="aqua" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2EC4C9"/><stop offset="1" stop-color="#11687A"/></linearGradient>
+</defs>`;
+const WORD_W=940; // G(0..280) R(340..592) G(660..900)
+function word(inner,{w=WORD_W,h=H,extraTop=0,extraBottom=0,scale=1}={}){
+  const vb=`0 ${-extraTop} ${w} ${h+extraTop+extraBottom}`;
+  return `<svg width="${w*scale}" height="${(h+extraTop+extraBottom)*scale}" viewBox="${vb}" overflow="visible">${DEFS}${inner}</svg>`;
+}
+const EM={std:'assets/emblem.png',rev:'assets/emblem-rev.png'};
+function card(id,bg,emblem,wordSvg,tag,tagColor,emH=470,gap=70){
+  return `<div class="card" id="${id}" style="background:${bg}">
+    <img class="em" src="${emblem}" style="height:${emH}px">
+    <div style="margin-top:${gap}px">${wordSvg}</div>
+    ${tag?`<div class="tag" style="color:${tagColor};margin-top:40px">${tag}</div>`:''}
+  </div>`;
+}
+
+const O=[];
+// 1 Bronze Roof R  (closest to the reference: bronze G's, teal R core)
+O.push(['Bronze Roof',card('g1',CREAM,EM.std,word(
+  G(0)+R(340,{stem:'url(#bronze)',bowl:'url(#tealg)',leg:'url(#tealg)'})+G(660)
+  +`<polygon points="375,-18 476,-70 577,-18" fill="none" stroke="${TEAL}" stroke-width="16"/>`,{extraTop:80}),
+  'Garg Realty Group',TEAL)]);
+
+// 2 Forward Arrow (right G's bar shoots forward)
+O.push(['Forward Arrow',card('g2','#FFFFFF',EM.std,word(
+  G(0,{body:'url(#tealg)',bar:'url(#bronze)'})+R(340,{stem:'url(#tealg)',bowl:'url(#tealg)',leg:'url(#bronze)'})
+  +G(660,{body:'url(#tealg)',bar:'url(#bronze)',barExtra:`<rect x="940" y="108" width="80" height="64" fill="url(#bronze)"/><polygon points="1020,70 1100,140 1020,210" fill="url(#bronze)"/>`}),{w:1110}),
+  'Real Estate Developers',GOLD)]);
+
+// 3 Crown Bars (emblem's stacked bars reused)
+O.push(['Crown Bars',card('g3',CREAM,EM.std,word(
+  G(0,{body:TEAL,bar:GOLD,barExtra:''})+R(340,{stem:TEAL,bowl:TEAL,leg:TEAL})+G(660,{body:TEAL,bar:GOLD})
+  +`<rect x="430" y="-104" width="92" height="22" fill="${GOLD}"/><rect x="400" y="-72" width="152" height="22" fill="${GOLD}"/><rect x="365" y="-40" width="222" height="22" fill="${GOLD}"/>`,{extraTop:110}),
+  'Garg Realty Group',GOLD)]);
+
+// 4 Shield Chevron (bottom cut to the emblem's V)
+O.push(['Shield Chevron',card('g4','#FFFFFF',EM.std,word(
+  `<clipPath id="shield"><polygon points="-20,-20 960,-20 960,262 470,300 -20,262"/></clipPath>
+   <g clip-path="url(#shield)">${G(0,{body:TEAL,bar:GOLD})+R(340,{stem:TEAL,bowl:TEAL,leg:GOLD})+G(660,{body:TEAL,bar:GOLD})}</g>
+   <polyline points="290,305 470,345 650,305" fill="none" stroke="${GOLD}" stroke-width="14" stroke-linejoin="miter"/>`,{extraBottom:80}),
+  'Garg Realty Group',TEAL)]);
+
+// 5 Interlock Monogram (letters overlap with knock-out gaps)
+function gap(markup,bg){return markup.replace(/stroke-width="70"/g,'stroke-width="100"').replace(/(fill|stroke)="(url\(#\w+\)|#[0-9A-Fa-f]{6})"/g,(m,k)=>`${k}="${bg}"`).replace(/<(rect|polygon)/g,`<$1 stroke="${bg}" stroke-width="16"`);}
+O.push(['Interlock',card('g5',CREAM,EM.std,
+  `<svg width="780" height="300" viewBox="-10 -10 780 300">${DEFS}
+    ${G(0,{body:'url(#tealg)',bar:'url(#bronze)'})}
+    ${gap(R(235),CREAM)}${R(235,{stem:'url(#bronze)',bowl:'url(#bronze)',leg:'url(#bronze)'})}
+    ${gap(G(480),CREAM)}${G(480,{body:'url(#tealg)',bar:'url(#bronze)'})}
+  </svg>`,'Garg Realty Group',TEAL)]);
+
+// 6 Inline Stripes (three bars run through all letters, echoing the emblem)
+O.push(['Inline Stripes',card('g6','#0B3A46',EM.rev,word(
+  `<mask id="stripes"><rect x="-50" y="-50" width="1000" height="400" fill="#fff"/>
+     <rect x="-50" y="96" width="1000" height="12" fill="#000"/><rect x="-50" y="134" width="1000" height="12" fill="#000"/><rect x="-50" y="172" width="1000" height="12" fill="#000"/></mask>
+   <g mask="url(#stripes)">${G(0,{body:'url(#foil)',bar:'url(#foil)'})+R(340,{stem:'url(#foil)',bowl:'url(#foil)',leg:'url(#foil)'})+G(660,{body:'url(#foil)',bar:'url(#foil)'})}</g>`),
+  'Garg Realty Group','#E8B45A')]);
+
+// 7 Diagonal Duotone (split along the emblem's slope)
+O.push(['Diagonal Duotone',card('g7','#FFFFFF',EM.std,word(
+  `<clipPath id="upper"><polygon points="-20,-20 960,-20 960,40 -20,260"/></clipPath>
+   <clipPath id="lower"><polygon points="-20,272 960,52 960,320 -20,320"/></clipPath>
+   <g clip-path="url(#upper)">${G(0,{body:TEAL,bar:TEAL})+R(340,{stem:TEAL,bowl:TEAL,leg:TEAL})+G(660,{body:TEAL,bar:TEAL})}</g>
+   <g clip-path="url(#lower)">${G(0)+R(340)+G(660)}</g>`),
+  'Garg Realty Group',TEAL)]);
+
+// 8 Midnight Foil (premium dark, glowing aqua R)
+O.push(['Midnight Foil',card('g8','radial-gradient(ellipse at 50% 38%,#12505E 0%,#051F26 78%)',EM.rev,word(
+  `<g style="filter:drop-shadow(0 10px 18px rgba(0,0,0,.45))">${G(0,{body:'url(#foil)',bar:'url(#foil)'})+R(340,{stem:'url(#foil)',bowl:'url(#aqua)',leg:'url(#aqua)'})+G(660,{body:'url(#foil)',bar:'url(#foil)'})}</g>`),
+  'Garg Realty Group','#EFE3C8')]);
+
+document.getElementById('root').innerHTML=O.map(o=>o[1]).join('');
+window.NAMES=O.map(o=>o[0]);window.READY=true;
+</script>
+</body>
+</html>
