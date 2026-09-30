@@ -72,6 +72,10 @@ body{margin:0;width:210mm;height:297mm;background:var(--ivory);color:var(--ink);
 
 .duo{display:grid;grid-template-columns:1fr 1.25fr;gap:6mm}
 .plc{display:flex;flex-direction:column;gap:1.8mm}
+.plc.row{display:grid;grid-template-columns:repeat(3,1fr);gap:3.5mm}
+.plc.row .pi{flex-direction:column;text-align:center;gap:2mm;padding:4mm 3mm}
+.plc.row .pi .ic{width:12mm;height:12mm}.plc.row .pi .ic svg{width:6.5mm;height:6.5mm}
+.plc.row .pi span{font-size:8.6pt}.plc.row .pi b{font-size:20pt}
 .pi{display:flex;align-items:center;gap:3mm;background:#fff;border:.3mm solid var(--line);border-radius:2.6mm;padding:1.2mm 3mm 1.2mm 1.4mm}
 .pi .ic{flex:none;width:8.4mm;height:8.4mm;border-radius:50%;background:linear-gradient(160deg,#1F4D38,#0D2419);display:flex;align-items:center;justify-content:center}
 .pi .ic svg{width:5.4mm;height:5.4mm}
@@ -88,7 +92,7 @@ body{margin:0;width:210mm;height:297mm;background:var(--ivory);color:var(--ink);
 .gv.s{background:linear-gradient(170deg,#1F4D38,#0D2419);color:var(--gold3);border-color:var(--gold2)}
 .gv.p{color:#8C6214}
 
-.banner{position:relative;margin-top:4.5mm;border-radius:3.5mm;background:linear-gradient(105deg,#0D2419 0%,#163A2A 55%,#1F4D38 100%);padding:3.2mm 6mm 3.2mm 26mm;overflow:hidden;border:.35mm solid rgba(226,189,114,.55)}
+.banner{position:relative;margin-top:7mm;border-radius:3.5mm;background:linear-gradient(105deg,#0D2419 0%,#163A2A 55%,#1F4D38 100%);padding:3.2mm 6mm 3.2mm 26mm;overflow:hidden;border:.35mm solid rgba(226,189,114,.55)}
 .banner .ico{position:absolute;left:6mm;top:50%;transform:translateY(-50%);width:15mm;height:15mm}
 .banner .wm{position:absolute;right:-6mm;top:-8mm;width:40mm;opacity:.12}
 .banner .t{font-size:7.6pt;color:var(--gold2)}
@@ -168,36 +172,13 @@ body{margin:0;width:210mm;height:297mm;background:var(--ivory);color:var(--ink);
     <div class="lr t"><div><svg viewBox="0 0 24 24" fill="none" stroke="#B8893A" stroke-width="1.8"><path d="M4 20V14M10 20V10M16 20V6M3 20h18"/><path d="M14 4h5v5M19 4l-6 6" /></svg>Effective Rate incl. Development</div><div class="sl">₹8,500</div><div>₹9,500</div><div>₹10,500</div></div>
   </div>
 
-  <!-- ================= PLC + ILLUSTRATION ================= -->
-  <div class="duo" style="margin-top:4.5mm">
-    <div>
-      <div class="sh"><svg viewBox="30 40 630 590"><use href="#lotus"/></svg><h2>Premium Location PLC</h2><i></i></div>
-      <div class="plc">
+  <!-- ================= PLC ================= -->
+  <div class="sh" style="margin-top:6mm"><svg viewBox="30 40 630 590"><use href="#lotus"/></svg><h2>Premium Location PLC</h2><i></i></div>
+  <div class="plc row">
         <div class="pi"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#E2BD72" stroke-width="1.6"><rect x="5" y="5" width="14" height="14" stroke-dasharray="2 2"/><path d="M5 19V5h14" stroke-width="2.4"/></svg></div><span>Corner Plot</span><b>+10%</b></div>
         <div class="pi"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#E2BD72" stroke-width="1.6"><path d="M12 3c-3 0-5 2.2-5 5 0 .6.1 1.1.3 1.6C5.4 10.2 4 12 4 14c0 2.5 2 4.5 4.5 4.5H12m0-15.5c3 0 5 2.2 5 5 0 .6-.1 1.1-.3 1.6 1.9.6 3.3 2.4 3.3 4.4 0 2.5-2 4.5-4.5 4.5H12M12 9v12"/></svg></div><span>Garden Facing / Garden Touch</span><b>+10%</b></div>
         <div class="pi"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#E2BD72" stroke-width="1.6"><path d="M8 3L4 21M16 3l4 18"/><path d="M12 4v3M12 10v3M12 16v3" stroke-width="2"/></svg></div><span>40 Ft Road Facing</span><b>+10%</b></div>
       </div>
-    </div>
-    <div>
-      <div class="sh"><svg viewBox="30 40 630 590"><use href="#lotus"/></svg><h2>Illustration &mdash; 100 Sq. Yd.</h2><i></i></div>
-      <div class="ex">
-        <div class="plot">
-          <svg viewBox="0 0 110 110" width="100%">
-            <rect x="5" y="5" width="100" height="100" fill="#fff" stroke="#B8893A" stroke-width="2.2"/>
-            <g stroke="#E6DBC4" stroke-width=".8"><path d="M15 5V105M25 5V105M35 5V105M45 5V105M55 5V105M65 5V105M75 5V105M85 5V105M95 5V105M5 15H105M5 25H105M5 35H105M5 45H105M5 55H105M5 65H105M5 75H105M5 85H105M5 95H105"/></g>
-            <rect x="5" y="5" width="10" height="10" fill="#B8893A"/>
-            <text x="55" y="63" text-anchor="middle" font-family="Serif" font-weight="700" font-size="24" fill="#0D2419">100</text>
-          </svg>
-          <div class="cap caps">Sq. Yd. Plot</div>
-        </div>
-        <div class="grid3">
-          <div></div><div class="gh caps">Soft Launch</div><div class="gh caps">Pre-Launch</div><div class="gh caps">Launch</div>
-          <div class="gl">Base Cost incl.<br>Development</div><div class="gv s">₹8.50 L</div><div class="gv">₹9.50 L</div><div class="gv">₹10.50 L</div>
-          <div class="gl">With<br>10% PLC</div><div class="gv s">₹9.25 L</div><div class="gv p">₹10.35 L</div><div class="gv p">₹11.45 L</div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- ================= EARLY ENTRY ================= -->
   <div class="banner">
