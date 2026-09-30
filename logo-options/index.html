@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>GRG Logo Options</title>
+<style>
+@font-face{font-family:Cinzel;src:url(fonts/Cinzel_wght_700_.ttf)}
+@font-face{font-family:MontX;src:url(fonts/Montserrat_wght_800_.ttf)}
+@font-face{font-family:MontL;src:url(fonts/Montserrat_wght_300_.ttf)}
+@font-face{font-family:Bebas;src:url(fonts/Bebas_Neue_.ttf)}
+@font-face{font-family:Playfair;src:url(fonts/Playfair_Display_wght_800_.ttf)}
+@font-face{font-family:JosL;src:url(fonts/Josefin_Sans_wght_300_.ttf)}
+@font-face{font-family:JosB;src:url(fonts/Josefin_Sans_wght_700_.ttf)}
+@font-face{font-family:Syne;src:url(fonts/Syne_wght_800_.ttf)}
+@font-face{font-family:Unbounded;src:url(fonts/Unbounded_wght_800_.ttf)}
+@font-face{font-family:Marcellus;src:url(fonts/Marcellus_.ttf)}
+@font-face{font-family:Archivo;src:url(fonts/Archivo_Black_.ttf)}
+@font-face{font-family:Poppins;src:url(fonts/Poppins_wght_600_.ttf)}
+@font-face{font-family:CormI;src:url(fonts/Cormorant_Garamond_ital_wght_1_500_.ttf)}
+:root{--teal:#11687A;--teal2:#0B4350;--deep:#082E37;--gold:#C88828;--gold2:#E8B45A;--cream:#F7F2E8}
+body{margin:0;background:#888;display:flex;flex-wrap:wrap;gap:20px;padding:20px}
+.card{position:relative;width:1200px;height:1200px;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.em{height:500px;display:block}
+.tag{letter-spacing:.42em;text-transform:uppercase;padding-left:.42em}
+.row{display:flex;align-items:center;justify-content:center}
+.gtext{-webkit-background-clip:text;background-clip:text;color:transparent}
+</style>
+</head>
+<body>
+
+<!-- 01 Classic Capital -->
+<div class="card" id="o1" style="background:var(--cream)">
+  <img class="em" src="assets/emblem.png">
+  <div class="row" style="gap:44px;margin-top:70px">
+    <div style="width:150px;height:4px;background:var(--gold)"></div>
+    <div style="font-family:Cinzel;font-size:190px;color:var(--teal);letter-spacing:.2em;padding-left:.2em;line-height:1">GRG</div>
+    <div style="width:150px;height:4px;background:var(--gold)"></div>
+  </div>
+  <div class="tag" style="font-family:JosB;font-size:34px;color:var(--gold);margin-top:30px">Garg Realty Group</div>
+</div>
+
+<!-- 02 Horizon Split -->
+<div class="card" id="o2" style="background:#fff">
+  <img class="em" src="assets/emblem.png">
+  <div style="position:relative;margin-top:60px;height:230px;width:900px">
+    <div style="position:absolute;inset:0;text-align:center;font-family:MontX;font-size:250px;line-height:230px;letter-spacing:.04em;color:var(--teal);clip-path:inset(0 0 44% 0)">GRG</div>
+    <div style="position:absolute;inset:0;text-align:center;font-family:MontX;font-size:250px;line-height:230px;letter-spacing:.04em;color:var(--gold);clip-path:inset(58% 0 0 0)">GRG</div>
+  </div>
+  <div class="tag" style="font-family:MontL;font-size:32px;color:var(--teal2);margin-top:34px">Garg Realty Group</div>
+</div>
+
+<!-- 03 Tower Stack -->
+<div class="card" id="o3" style="background:var(--cream)">
+  <img class="em" src="assets/emblem.png" style="height:450px">
+  <div style="position:relative;margin-top:90px">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:10px;position:absolute;left:50%;transform:translateX(-50%);top:-6px">
+      <div style="width:70px;height:14px;background:var(--gold)"></div>
+      <div style="width:110px;height:14px;background:var(--gold)"></div>
+      <div style="width:150px;height:14px;background:var(--gold)"></div>
+    </div>
+    <div style="font-family:Bebas;font-size:330px;line-height:1;color:var(--teal);letter-spacing:.08em;padding-left:.08em;margin-top:44px">GRG</div>
+  </div>
+  <div class="tag" style="font-family:JosB;font-size:32px;color:var(--gold);margin-top:6px">Real Estate Developers</div>
+</div>
+
+<!-- 04 Gold Foil Luxury -->
+<div class="card" id="o4" style="background:radial-gradient(ellipse at 50% 40%,#0F4B59 0%,#062A33 75%)">
+  <img class="em" src="assets/emblem-rev.png">
+  <div class="gtext" style="font-family:Playfair;font-size:230px;line-height:1.05;letter-spacing:.08em;padding-left:.08em;margin-top:50px;background-image:linear-gradient(170deg,#FBE3A2 0%,#E8B45A 30%,#A8701E 55%,#F2CE7E 75%,#C88828 100%)">GRG</div>
+  <div style="font-family:CormI;font-size:58px;color:#EFE3C8;margin-top:10px">Garg Realty Group</div>
+</div>
+
+<!-- 05 Blueprint -->
+<div class="card" id="o5" style="background-color:#0B3A46;background-image:linear-gradient(rgba(255,255,255,.07) 2px,transparent 2px),linear-gradient(90deg,rgba(255,255,255,.07) 2px,transparent 2px);background-size:60px 60px">
+  <img class="em" src="assets/emblem-rev.png" style="height:440px">
+  <svg width="980" height="330" viewBox="0 0 980 330" style="margin-top:40px">
+    <text x="490" y="250" text-anchor="middle" font-family="Bebas" font-size="300" letter-spacing="40" fill="none" stroke="#fff" stroke-width="5">GRG</text>
+    <line x1="250" y1="300" x2="740" y2="300" stroke="#E8B45A" stroke-width="3"/>
+    <line x1="250" y1="285" x2="250" y2="315" stroke="#E8B45A" stroke-width="3"/><line x1="740" y1="285" x2="740" y2="315" stroke="#E8B45A" stroke-width="3"/>
+    <line x1="170" y1="40" x2="170" y2="250" stroke="#E8B45A" stroke-width="3"/>
+    <line x1="155" y1="40" x2="185" y2="40" stroke="#E8B45A" stroke-width="3"/><line x1="155" y1="250" x2="185" y2="250" stroke="#E8B45A" stroke-width="3"/>
+  </svg>
+  <div class="tag" style="font-family:JosB;font-size:30px;color:#E8B45A;margin-top:18px">Garg Realty Group &middot; Developers</div>
+</div>
+
+<!-- 06 Constructed Geometric (custom glyphs) -->
+<div class="card" id="o6" style="background:var(--cream)">
+  <img class="em" src="assets/emblem.png" style="height:470px">
+  <svg width="980" height="320" viewBox="0 0 980 320" style="margin-top:60px">
+    <g transform="translate(40,10)">
+      <!-- G -->
+      <path d="M241 66 A126 126 0 1 0 276 150" fill="none" stroke="#11687A" stroke-width="62"/>
+      <rect x="158" y="120" width="149" height="60" fill="#C88828"/>
+      <!-- R -->
+      <g transform="translate(360,0)">
+        <rect x="0" y="0" width="62" height="300" fill="#11687A"/>
+        <path d="M31 31 H150 A70 70 0 0 1 150 171 H31" fill="none" stroke="#11687A" stroke-width="62"/>
+        <polygon points="120,171 190,171 262,300 192,300" fill="#C88828"/>
+      </g>
+      <!-- G -->
+      <g transform="translate(640,0)">
+        <path d="M241 66 A126 126 0 1 0 276 150" fill="none" stroke="#11687A" stroke-width="62"/>
+        <rect x="158" y="120" width="149" height="60" fill="#C88828"/>
+      </g>
+    </g>
+  </svg>
+  <div class="tag" style="font-family:JosB;font-size:32px;color:var(--teal);margin-top:36px">Garg Realty Group</div>
+</div>
+
+<!-- 07 Skyline Windows -->
+<div class="card" id="o7" style="background:#fff">
+  <img class="em" src="assets/emblem.png" style="height:460px">
+  <svg width="1000" height="300" viewBox="0 0 1000 300" style="margin-top:56px">
+    <defs>
+      <pattern id="win" width="44" height="52" patternUnits="userSpaceOnUse"><rect width="44" height="52" fill="#11687A"/><rect x="15" y="14" width="14" height="22" fill="#F3C66E"/></pattern>
+      <clipPath id="txt"><text x="500" y="280" text-anchor="middle" font-family="Archivo" font-size="320" letter-spacing="20">GRG</text></clipPath>
+    </defs>
+    <rect width="1000" height="300" fill="url(#win)" clip-path="url(#txt)"/>
+  </svg>
+  <div style="width:820px;height:10px;background:var(--gold);margin-top:10px"></div>
+  <div class="tag" style="font-family:JosB;font-size:32px;color:var(--teal);margin-top:28px">Garg Realty Group</div>
+</div>
+
+<!-- 08 Vibrant Gradient -->
+<div class="card" id="o8" style="background:linear-gradient(160deg,#FFFFFF 0%,#F4F8F8 100%)">
+  <img class="em" src="assets/emblem.png">
+  <div class="gtext" style="font-family:Unbounded;font-size:210px;line-height:1.1;letter-spacing:.02em;margin-top:50px;background-image:linear-gradient(100deg,#0B4350 0%,#11687A 30%,#1FA3A8 52%,#E8B45A 78%,#C88828 100%)">GRG</div>
+  <div style="font-family:Poppins;font-size:36px;color:#0B4350;letter-spacing:.18em;margin-top:18px">GARG REALTY GROUP</div>
+</div>
+
+<!-- 09 Horizontal Lockup -->
+<div class="card" id="o9" style="background:#fff">
+  <div class="row" style="gap:60px">
+    <img src="assets/emblem.png" style="height:430px">
+    <div style="width:5px;height:380px;background:var(--gold)"></div>
+    <div>
+      <div style="font-family:MontX;font-size:220px;line-height:.9;color:var(--teal);letter-spacing:.02em">GRG</div>
+      <div style="font-family:JosB;font-size:40px;letter-spacing:.2em;color:var(--teal2);margin-top:26px">GARG REALTY GROUP</div>
+      <div style="font-family:JosL;font-size:34px;letter-spacing:.18em;color:var(--gold);margin-top:12px">DEVELOPERS &middot; SINCE 2007</div>
+    </div>
+  </div>
+</div>
+
+<!-- 10 Monoline Wide -->
+<div class="card" id="o10" style="background:var(--cream)">
+  <img class="em" src="assets/emblem.png">
+  <div class="row" style="margin-top:70px;font-family:JosL;font-size:200px;line-height:1;color:var(--teal);gap:60px">
+    <span>G</span><span style="width:24px;height:24px;background:var(--gold);transform:rotate(45deg)"></span><span>R</span><span style="width:24px;height:24px;background:var(--gold);transform:rotate(45deg)"></span><span>G</span>
+  </div>
+  <div class="tag" style="font-family:JosB;font-size:30px;color:var(--gold);margin-top:40px">Garg Realty Group</div>
+</div>
+
+<!-- 11 Seal -->
+<div class="card" id="o11" style="background:#fff">
+  <svg width="1000" height="1000" viewBox="0 0 1000 1000" style="position:absolute;left:100px;top:100px">
+    <defs><path id="circ" d="M500 500 m-400 0 a400 400 0 1 1 800 0 a400 400 0 1 1 -800 0"/></defs>
+    <circle cx="500" cy="500" r="470" fill="none" stroke="#11687A" stroke-width="10"/>
+    <circle cx="500" cy="500" r="455" fill="none" stroke="#C88828" stroke-width="3"/>
+    <circle cx="500" cy="500" r="345" fill="none" stroke="#C88828" stroke-width="3"/>
+    <text font-family="JosB" font-size="46" letter-spacing="14.2" fill="#11687A"><textPath href="#circ" startOffset="0">GARG REALTY GROUP • REAL ESTATE DEVELOPERS • SINCE 2007 •</textPath></text>
+  </svg>
+  <img src="assets/emblem.png" style="position:absolute;left:487px;top:250px;height:330px">
+  <div style="position:absolute;left:0;top:610px;width:1200px;text-align:center;font-family:Cinzel;font-size:150px;color:var(--teal);letter-spacing:.12em;padding-left:.12em">GRG</div>
+</div>
+
+<!-- 12 Roof Line -->
+<div class="card" id="o12" style="background:var(--cream)">
+  <img class="em" src="assets/emblem.png" style="height:440px">
+  <div style="position:relative;margin-top:120px">
+    <svg width="420" height="110" viewBox="0 0 420 110" style="position:absolute;left:50%;transform:translateX(-50%);top:-72px">
+      <polyline points="20,100 210,12 400,100" fill="none" stroke="#C88828" stroke-width="16" stroke-linejoin="miter"/>
+    </svg>
+    <div style="font-family:Marcellus;font-size:230px;line-height:1;color:var(--teal);letter-spacing:.14em;padding-left:.14em;margin-top:30px">GRG</div>
+  </div>
+  <div class="tag" style="font-family:MontL;font-size:32px;color:var(--teal2);margin-top:26px">Garg Realty Group</div>
+</div>
+
+<script>window.READY=true;</script>
+</body>
+</html>
