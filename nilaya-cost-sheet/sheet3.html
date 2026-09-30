@@ -1,0 +1,215 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Nilaya Cost Sheet</title>
+<style>
+@font-face{font-family:Cinzel;src:url(../logo-options/fonts/Cinzel_wght_500_.ttf);font-weight:500}
+@font-face{font-family:Cinzel;src:url(../logo-options/fonts/Cinzel_wght_600_.ttf);font-weight:600}
+@font-face{font-family:Serif;src:url(../logo-options/fonts/Cormorant_Garamond_wght_700_.ttf);font-weight:700}
+@font-face{font-family:Serif;src:url(../logo-options/fonts/Cormorant_Garamond_wght_600_.ttf);font-weight:600}
+@font-face{font-family:SerifI;src:url(../logo-options/fonts/Cormorant_Garamond_ital_wght_1_500_.ttf)}
+@font-face{font-family:Sans;src:url(../logo-options/fonts/Montserrat_wght_500_.ttf);font-weight:500}
+@font-face{font-family:Sans;src:url(../logo-options/fonts/Montserrat_wght_600_.ttf);font-weight:600}
+@font-face{font-family:Sans;src:url(../logo-options/fonts/Montserrat_wght_800_.ttf);font-weight:800}
+@page{size:A4;margin:0}
+*{box-sizing:border-box}
+/* Layout: one A4 page. Arched hero (the logo's dome shape) over ivory paper; arch-topped price cards; ledger; PLC + plot example; banner. */
+:root{--forest:#0D2419;--forest2:#163A2A;--emer:#1F4D38;--gold:#B8893A;--gold2:#E2BD72;--gold3:#F6DFA6;--ivory:#F6F1E6;--line:#E0D3B8;--ink:#14261D;--mute:#6B766F}
+body{margin:0;width:210mm;height:297mm;background:var(--ivory);color:var(--ink);font-family:Sans;font-weight:500;position:relative;overflow:hidden}
+.foil{background:linear-gradient(172deg,#FBEBC0 0%,#E2BD72 30%,#A3772C 58%,#F2D594 80%,#B8893A 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.caps{font-family:Sans;font-weight:600;text-transform:uppercase;letter-spacing:.3em}
+
+/* hero */
+.hero{position:relative;height:99mm;background:radial-gradient(ellipse at 50% 42%,#1F4D38 0%,#122F22 45%,#0B1F16 100%);overflow:hidden}
+.pattern{position:absolute;inset:0;opacity:.13}
+.corner{position:absolute;top:9mm;display:flex;align-items:center;gap:2.6mm;color:var(--gold2)}
+.corner.l{left:12mm}.corner.r{right:12mm}
+.corner img{height:10mm;filter:brightness(0) saturate(100%) invert(80%) sepia(40%) saturate(500%) hue-rotate(345deg)}
+.corner b{font-family:Sans;font-weight:800;font-size:13pt;letter-spacing:.22em}
+.pill{font-size:7.6pt;letter-spacing:.5em;padding:1.6mm 3mm 1.4mm 4.2mm;border:.3mm solid rgba(226,189,114,.7);border-radius:10mm;color:#EFE3C4}
+.arch{position:absolute;left:50%;top:5mm;transform:translateX(-50%);width:96mm;height:99.6mm}
+.hc{position:absolute;left:0;right:0;top:12.5mm;text-align:center}
+.mark{width:31mm;height:29mm;display:block;margin:0 auto}
+.name{font-family:Cinzel;font-weight:500;font-size:34pt;letter-spacing:.2em;padding-left:.2em;line-height:1;margin-top:2.4mm}
+.rule{width:14mm;height:.4mm;background:var(--gold2);margin:2.6mm auto 2mm}
+.tag{font-family:SerifI;font-size:12pt;line-height:1.25;color:#EFE6D0}
+.ppo{margin-top:2.6mm;font-size:6pt;letter-spacing:.3em;padding-left:.3em;color:var(--gold2)}
+.edge{position:absolute;left:0;bottom:-.3mm;width:100%;height:16mm}
+
+.wrap{padding:0 12mm}
+.sh{display:flex;align-items:center;gap:3mm;margin:0 0 2.6mm}
+.sh h2{margin:0;font-family:Cinzel;font-weight:600;font-size:12.5pt;letter-spacing:.06em;color:var(--forest2);white-space:nowrap}
+.sh i{flex:1;height:.3mm;background:linear-gradient(90deg,var(--gold),rgba(184,137,58,0))}
+.sh svg{flex:none;width:6mm;height:6mm}
+
+/* arch price cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;align-items:end;margin-top:-11mm;position:relative;z-index:2}
+.card{position:relative;border-radius:30mm 30mm 3mm 3mm;padding:7mm 3mm 3mm;text-align:center;background:#fff;border:.45mm solid var(--gold);box-shadow:0 2mm 6mm rgba(13,36,25,.12)}
+.card:after{content:"";position:absolute;inset:1.4mm;border-radius:28.6mm 28.6mm 2mm 2mm;border:.25mm solid rgba(184,137,58,.45);pointer-events:none}
+.card .lf{width:5mm;height:5mm;margin:0 auto}
+.card .ph{font-size:6.6pt;color:var(--emer);margin-top:1.2mm}
+.card .pr{font-family:Serif;font-weight:700;font-size:25pt;line-height:1;margin-top:1.5mm;color:var(--forest)}
+.card .u{font-family:SerifI;font-size:10.5pt;color:var(--mute)}
+.card .ef{margin-top:2mm;font-size:6.5pt;color:var(--ink);border-top:.25mm solid var(--line);padding-top:1.6mm;white-space:nowrap}
+.card .ef b{font-weight:800;color:var(--gold)}
+.c1{height:42.5mm}.c2{height:45.5mm}.c3{height:48.5mm}
+.card.soft{background:linear-gradient(170deg,#1F4D38,#0D2419);border-color:var(--gold2)}
+.card.soft .ph{color:var(--gold2)}.card.soft .pr{color:var(--gold3)}.card.soft .u{color:#CFC3A6}.card.soft .ef{color:#EDE3CC;border-color:rgba(226,189,114,.35)}.card.soft .ef b{color:var(--gold2)}
+.card.soft:after{border-color:rgba(226,189,114,.5)}
+
+/* ledger */
+.ledger{background:#fff;border-radius:3mm;overflow:hidden;box-shadow:0 1.2mm 4mm rgba(13,36,25,.08);border:.3mm solid var(--line)}
+.lr{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;align-items:center}
+.lr>div{padding:1.6mm 3mm;text-align:center;font-variant-numeric:tabular-nums;font-family:Serif;font-weight:600;font-size:12pt}
+.lr>div:first-child{display:flex;align-items:center;gap:2.5mm;text-align:left;font-family:Sans;font-weight:600;font-size:8.2pt;white-space:nowrap}
+.lr>div:first-child svg{width:5.2mm;height:5.2mm;flex:none}
+.lr.h{background:linear-gradient(90deg,#163A2A,#0D2419);color:#fff}
+.lr.h>div{font-family:Sans;font-weight:600;font-size:6.4pt;letter-spacing:.24em;padding:2.3mm 3mm 2mm;text-transform:uppercase}
+.lr.h>div.sl{background:var(--gold);color:#fff}
+.lr+.lr:not(.h){border-top:.25mm solid #EFE7D6}
+.lr .sl{background:rgba(226,189,114,.13);color:#7B5A1E}
+.lr.t{background:linear-gradient(90deg,#F4EAD3,#FBF6EA)}
+.lr.t>div{font-weight:700;font-size:14pt;color:var(--forest)}
+.lr.t>div:first-child{font-weight:800;font-size:8.2pt}
+.lr.t>div.sl{color:#8C6214}
+
+.duo{display:grid;grid-template-columns:1fr 1.25fr;gap:6mm}
+.plc{display:flex;flex-direction:column;gap:1.8mm}
+.pi{display:flex;align-items:center;gap:3mm;background:#fff;border:.3mm solid var(--line);border-radius:2.6mm;padding:1.2mm 3mm 1.2mm 1.4mm}
+.pi .ic{flex:none;width:8.4mm;height:8.4mm;border-radius:50%;background:linear-gradient(160deg,#1F4D38,#0D2419);display:flex;align-items:center;justify-content:center}
+.pi .ic svg{width:5.4mm;height:5.4mm}
+.pi span{flex:1;font-weight:600;font-size:7.8pt;color:var(--forest)}
+.pi b{font-family:Serif;font-weight:700;font-size:14pt;color:var(--gold)}
+
+.ex{display:flex;gap:3.5mm}
+.plot{flex:none;width:21mm;text-align:center}
+.plot .cap{font-size:5.8pt;letter-spacing:.2em;color:var(--mute);margin-top:1mm}
+.grid3{flex:1;display:grid;grid-template-columns:auto 1fr 1fr 1fr;gap:1.6mm;align-items:stretch}
+.gh{font-size:5.3pt;letter-spacing:.16em;color:var(--emer);text-align:center;align-self:end;white-space:nowrap}
+.gl{font-size:5.6pt;font-weight:600;color:var(--mute);align-self:center;line-height:1.25}
+.gv{background:#fff;border:.3mm solid var(--line);border-radius:2mm;text-align:center;font-family:Serif;font-weight:700;font-size:11pt;color:var(--forest);padding:1.8mm 0;white-space:nowrap}
+.gv.s{background:linear-gradient(170deg,#1F4D38,#0D2419);color:var(--gold3);border-color:var(--gold2)}
+.gv.p{color:#8C6214}
+
+.banner{position:relative;margin-top:4.5mm;border-radius:3.5mm;background:linear-gradient(105deg,#0D2419 0%,#163A2A 55%,#1F4D38 100%);padding:3.2mm 6mm 3.2mm 26mm;overflow:hidden;border:.35mm solid rgba(226,189,114,.55)}
+.banner .ico{position:absolute;left:6mm;top:50%;transform:translateY(-50%);width:15mm;height:15mm}
+.banner .wm{position:absolute;right:-6mm;top:-8mm;width:40mm;opacity:.12}
+.banner .t{font-size:7.6pt;color:var(--gold2)}
+.banner p{margin:1mm 0 0;font-family:SerifI;font-size:12.5pt;line-height:1.22;color:#F2E9D4}
+.note{margin-top:3.2mm;font-size:6.5pt;line-height:1.5;color:var(--mute)}
+.note b{color:var(--ink)}
+.ft{position:absolute;left:0;bottom:0;width:100%;height:12mm;background:#0D2419;display:flex;align-items:center;justify-content:space-between;padding:0 12mm;border-top:.5mm solid var(--gold)}
+.ft .l{display:flex;align-items:center;gap:2.4mm;color:var(--gold2)}
+.ft img{height:7mm;filter:brightness(0) saturate(100%) invert(80%) sepia(40%) saturate(500%) hue-rotate(345deg)}
+.ft b{font-weight:800;letter-spacing:.22em;font-size:9.5pt}
+.ft .m{font-family:SerifI;font-size:10.5pt;color:#E9DFC6}
+.ft .r{font-size:6.8pt;letter-spacing:.3em;color:#CFC3A6}
+</style></head><body>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F8E3AA"/><stop offset=".45" stop-color="#D6AC5E"/><stop offset=".75" stop-color="#A67A2E"/><stop offset="1" stop-color="#E9C77F"/></linearGradient>
+    <!-- Nilaya lotus-arch mark (vector redraw), 680x660 space -->
+    <g id="lotus" fill="none" stroke="url(#gg)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M128 474 C104 300 196 118 345 58 C494 118 586 300 562 474"/>
+      <path d="M345 106 V132 M345 170 V214 M345 262 V278"/>
+      <path d="M345 128 L357 150 L345 172 L333 150 Z" fill="url(#gg)" stroke-width="4"/>
+      <path d="M345 214 C359 226 360 248 345 262 C330 248 331 226 345 214 Z" fill="url(#gg)" stroke-width="4"/>
+      <path d="M345 278 C292 336 266 474 345 566 C424 474 398 336 345 278 Z"/>
+      <path d="M300 402 C322 424 338 448 345 468 C352 448 368 424 390 402"/>
+      <path d="M345 566 C236 548 172 452 180 332 C268 348 326 412 352 476"/>
+      <path d="M345 566 C454 548 518 452 510 332 C422 348 364 412 338 476"/>
+      <path d="M345 566 C248 604 118 588 54 492 C150 462 262 482 345 566"/>
+      <path d="M345 566 C442 604 572 588 636 492 C540 462 428 482 345 566"/>
+      <path d="M150 578 L186 556 M540 578 L504 556" stroke-width="7"/>
+    </g>
+    <path id="leaf" d="M4 20 C4 10 12 3 22 3 C22 13 15 20 4 20 Z M4 20 L14 11" fill="none" stroke="#B8893A" stroke-width="2" stroke-linecap="round"/>
+  </defs>
+</svg>
+
+<!-- ================= HERO ================= -->
+<div class="hero">
+  <svg class="pattern" viewBox="0 0 800 450" preserveAspectRatio="xMidYMid slice">
+    <defs><pattern id="pt" width="80" height="80" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke="#E2BD72" stroke-width="1"><path d="M40 8 C56 24 56 44 40 60 C24 44 24 24 40 8Z"/><path d="M8 40 C24 24 44 24 60 40 C44 56 24 56 8 40Z" opacity=".6"/><circle cx="0" cy="0" r="6"/><circle cx="80" cy="0" r="6"/><circle cx="0" cy="80" r="6"/><circle cx="80" cy="80" r="6"/></g>
+    </pattern></defs>
+    <rect width="800" height="450" fill="url(#pt)"/>
+  </svg>
+  <div class="corner l"><img src="emblem.png"><b>GRG</b></div>
+  <div class="corner r"><span class="pill caps">Dholera</span></div>
+
+  <svg class="arch" viewBox="0 0 424 440">
+    <defs><linearGradient id="archfill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0D2419" stop-opacity=".55"/><stop offset="1" stop-color="#0D2419" stop-opacity="0"/></linearGradient></defs>
+    <path d="M22 440 V250 C22 120 110 40 212 8 C314 40 402 120 402 250 V440" fill="url(#archfill)" stroke="url(#gg)" stroke-width="2.2"/>
+    <path d="M36 440 V252 C36 132 118 58 212 26 C306 58 388 132 388 252 V440" fill="none" stroke="#E2BD72" stroke-opacity=".45" stroke-width="1"/>
+    <circle cx="212" cy="8" r="4" fill="#E2BD72"/>
+  </svg>
+  <div class="hc">
+    <svg class="mark" viewBox="30 40 630 590"><use href="#lotus"/></svg>
+    <div class="name foil">NILAYA</div>
+    <div class="rule"></div>
+    <div class="tag">Where the spirit of Nilachala<br>meets the peace of home.</div>
+    <div class="ppo caps">Premium Plot Investment Opportunity</div>
+  </div>
+  <svg class="edge" viewBox="0 0 800 60" preserveAspectRatio="none"><path d="M0 60 V34 C160 34 250 10 400 10 C550 10 640 34 800 34 V60 Z" fill="#F6F1E6"/><path d="M0 34 C160 34 250 10 400 10 C550 10 640 34 800 34" fill="none" stroke="#B8893A" stroke-width="2"/></svg>
+</div>
+
+<div class="wrap">
+  <!-- ================= PRICE CARDS ================= -->
+  <div class="cards">
+    <div class="card soft c1"><svg class="lf" viewBox="0 0 26 24"><use href="#leaf" style="stroke:#E2BD72"/></svg><div class="ph caps">Soft Launch</div><div class="pr">₹7,500</div><div class="u">/ Sq. Yd.</div><div class="ef">Effective <b>₹8,500</b> incl. development</div></div>
+    <div class="card c2"><svg class="lf" viewBox="0 0 26 24"><use href="#leaf"/></svg><div class="ph caps">Pre-Launch</div><div class="pr">₹8,500</div><div class="u">/ Sq. Yd.</div><div class="ef">Effective <b>₹9,500</b> incl. development</div></div>
+    <div class="card c3"><svg class="lf" viewBox="0 0 26 24"><use href="#leaf"/></svg><div class="ph caps">Launch</div><div class="pr">₹9,500</div><div class="u">/ Sq. Yd.</div><div class="ef">Effective <b>₹10,500</b> incl. development</div></div>
+  </div>
+
+  <!-- ================= COST STRUCTURE ================= -->
+  <div class="sh" style="margin-top:4.5mm"><svg viewBox="30 40 630 590"><use href="#lotus"/></svg><h2>Transparent Cost Structure</h2><i></i></div>
+  <div class="ledger">
+    <div class="lr h"><div>Particular</div><div class="sl">Soft Launch</div><div>Pre-Launch</div><div>Launch</div></div>
+    <div class="lr"><div><svg viewBox="0 0 24 24" fill="none" stroke="#B8893A" stroke-width="1.6"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v4c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 10v4c0 1.7 3.1 3 7 3s7-1.3 7-3v-4M5 14v4c0 1.7 3.1 3 7 3s7-1.3 7-3v-4"/></svg>Plot Rate / Sq. Yd.</div><div class="sl">₹7,500</div><div>₹8,500</div><div>₹9,500</div></div>
+    <div class="lr"><div><svg viewBox="0 0 24 24" fill="none" stroke="#B8893A" stroke-width="1.6"><path d="M3 21h18M5 21V9l7-5 7 5v12"/><path d="M9 21v-6h6v6"/></svg>Development / Sq. Yd.</div><div class="sl">₹1,000</div><div>₹1,000</div><div>₹1,000</div></div>
+    <div class="lr t"><div><svg viewBox="0 0 24 24" fill="none" stroke="#B8893A" stroke-width="1.8"><path d="M4 20V14M10 20V10M16 20V6M3 20h18"/><path d="M14 4h5v5M19 4l-6 6" /></svg>Effective Rate incl. Development</div><div class="sl">₹8,500</div><div>₹9,500</div><div>₹10,500</div></div>
+  </div>
+
+  <!-- ================= PLC + ILLUSTRATION ================= -->
+  <div class="duo" style="margin-top:4.5mm">
+    <div>
+      <div class="sh"><svg viewBox="30 40 630 590"><use href="#lotus"/></svg><h2>Premium Location PLC</h2><i></i></div>
+      <div class="plc">
+        <div class="pi"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#E2BD72" stroke-width="1.6"><rect x="5" y="5" width="14" height="14" stroke-dasharray="2 2"/><path d="M5 19V5h14" stroke-width="2.4"/></svg></div><span>Corner Plot</span><b>+10%</b></div>
+        <div class="pi"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#E2BD72" stroke-width="1.6"><path d="M12 3c-3 0-5 2.2-5 5 0 .6.1 1.1.3 1.6C5.4 10.2 4 12 4 14c0 2.5 2 4.5 4.5 4.5H12m0-15.5c3 0 5 2.2 5 5 0 .6-.1 1.1-.3 1.6 1.9.6 3.3 2.4 3.3 4.4 0 2.5-2 4.5-4.5 4.5H12M12 9v12"/></svg></div><span>Garden Facing / Garden Touch</span><b>+10%</b></div>
+        <div class="pi"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#E2BD72" stroke-width="1.6"><path d="M8 3L4 21M16 3l4 18"/><path d="M12 4v3M12 10v3M12 16v3" stroke-width="2"/></svg></div><span>40 Ft Road Facing</span><b>+10%</b></div>
+      </div>
+    </div>
+    <div>
+      <div class="sh"><svg viewBox="30 40 630 590"><use href="#lotus"/></svg><h2>Illustration &mdash; 100 Sq. Yd.</h2><i></i></div>
+      <div class="ex">
+        <div class="plot">
+          <svg viewBox="0 0 110 110" width="100%">
+            <rect x="5" y="5" width="100" height="100" fill="#fff" stroke="#B8893A" stroke-width="2.2"/>
+            <g stroke="#E6DBC4" stroke-width=".8"><path d="M15 5V105M25 5V105M35 5V105M45 5V105M55 5V105M65 5V105M75 5V105M85 5V105M95 5V105M5 15H105M5 25H105M5 35H105M5 45H105M5 55H105M5 65H105M5 75H105M5 85H105M5 95H105"/></g>
+            <rect x="5" y="5" width="10" height="10" fill="#B8893A"/>
+            <text x="55" y="63" text-anchor="middle" font-family="Serif" font-weight="700" font-size="24" fill="#0D2419">100</text>
+          </svg>
+          <div class="cap caps">Sq. Yd. Plot</div>
+        </div>
+        <div class="grid3">
+          <div></div><div class="gh caps">Soft Launch</div><div class="gh caps">Pre-Launch</div><div class="gh caps">Launch</div>
+          <div class="gl">Base Cost incl.<br>Development</div><div class="gv s">₹8.50 L</div><div class="gv">₹9.50 L</div><div class="gv">₹10.50 L</div>
+          <div class="gl">With<br>10% PLC</div><div class="gv s">₹9.25 L</div><div class="gv p">₹10.35 L</div><div class="gv p">₹11.45 L</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= EARLY ENTRY ================= -->
+  <div class="banner">
+    <svg class="wm" viewBox="30 40 630 590"><use href="#lotus"/></svg>
+    <svg class="ico" viewBox="0 0 60 60"><circle cx="30" cy="30" r="28" fill="none" stroke="#E2BD72" stroke-width="1.4"/><circle cx="30" cy="30" r="22" fill="url(#gg)"/><path d="M18 40h24M21 40v-6M28 40v-10M35 40v-14" stroke="#0D2419" stroke-width="3" stroke-linecap="round"/><path d="M20 27l8-7 5 4 8-8M36 16h5v5" fill="none" stroke="#0D2419" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="t caps">Early-Entry Advantage</div>
+    <p>Secure your preferred plot at the soft-launch rate before the project moves to pre-launch and launch pricing.</p>
+  </div>
+
+  <div class="note"><b>Note:</b> Development charges are ₹1,000 per sq. yd. PLC is applicable as per plot attributes. Where more than one qualifying PLC applies, the final payable amount should be confirmed as per the project's allotment/pricing policy. Taxes, registration, stamp duty and other statutory charges, if applicable, are additional.</div>
+</div>
+
+<div class="ft"><div class="l"><img src="emblem.png"><b>GRG</b></div><div class="m">Nilaya &middot; Dholera</div><div class="r">GARGREALTYGROUP.COM</div></div>
+<script>window.READY=true</script>
+</body></html>
