@@ -1,0 +1,101 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Nilaya Cost Sheet</title>
+<style>
+@font-face{font-family:MX;src:url(../logo-options/fonts/Montserrat_wght_800_.ttf)}
+@font-face{font-family:ML;src:url(../logo-options/fonts/Montserrat_wght_300_.ttf)}
+@font-face{font-family:JB;src:url(../logo-options/fonts/Josefin_Sans_wght_700_.ttf)}
+@font-face{font-family:PF;src:url(../logo-options/fonts/Playfair_Display_wght_800_.ttf)}
+@font-face{font-family:CI;src:url(../logo-options/fonts/Cormorant_Garamond_ital_wght_1_500_.ttf)}
+@page{size:A4;margin:0}
+*{box-sizing:border-box}
+:root{--t:#0E5A6A;--td:#08323C;--g:#C88828;--g2:#E8B45A;--c:#F7F2E8;--ink:#1D2B30}
+body{margin:0;width:210mm;height:297mm;font-family:ML,sans-serif;color:var(--ink);background:#fff;position:relative;overflow:hidden}
+.hero{position:relative;height:74mm;background:radial-gradient(ellipse at 80% 20%,#15707F 0%,#08323C 70%);color:#fff;padding:9mm 12mm 0;overflow:hidden}
+.hero .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:8mm 8mm}
+.brand{position:relative;display:flex;align-items:center;gap:3mm;font-family:JB;letter-spacing:.32em;font-size:8.5pt;color:var(--g2)}
+.brand img{height:13mm;filter:brightness(0) invert(1)}
+.kick{position:relative;margin-top:7mm;font-family:JB;letter-spacing:.4em;font-size:8pt;color:#BFE0E3}
+h1{position:relative;margin:1mm 0 0;font-family:PF;font-size:58pt;line-height:.95;letter-spacing:.06em;background:linear-gradient(170deg,#FCE7A8,#E8B45A 40%,#A8701E 65%,#F2CE7E);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{position:relative;font-family:CI;font-size:17pt;color:#EFE3C8;margin-top:1mm}
+.stamp{position:absolute;right:12mm;top:21mm;width:38mm;height:38mm;border-radius:50%;background:var(--g);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 0 0 2.2mm rgba(232,180,90,.35);transform:rotate(-8deg)}
+.stamp b{font-family:MX;font-size:22pt;line-height:1}.stamp span{font-family:JB;font-size:6.5pt;letter-spacing:.18em;margin-top:1mm}
+.ridge{position:absolute;left:0;bottom:-1px;width:100%}
+.wrap{padding:0 12mm}
+.sect{display:flex;align-items:center;gap:3mm;margin:5mm 0 2.6mm;font-family:MX;font-size:11pt;letter-spacing:.06em;color:var(--td);text-transform:uppercase}
+.sect:before{content:"";width:6mm;height:2.2mm;background:var(--g)}
+.ladder{display:flex;align-items:flex-end;gap:3mm;height:44mm;margin-top:5mm}
+.step{flex:1;border-radius:3mm 3mm 0 0;color:#fff;padding:4mm;position:relative;display:flex;flex-direction:column;justify-content:flex-end}
+.step .ph{font-family:JB;font-size:7.5pt;letter-spacing:.25em;opacity:.9}
+.step .pr{font-family:MX;font-size:22pt;line-height:1.05;margin-top:1mm}
+.step .pr small{font-family:ML;font-size:8pt;opacity:.85}
+.step .eff{font-size:7.5pt;margin-top:1.5mm;opacity:.92}
+.s1{height:27mm;background:linear-gradient(160deg,#E8B45A,#B77A1E)}
+.s2{height:34mm;background:linear-gradient(160deg,#15707F,#0B4A57)}
+.s3{height:41mm;background:linear-gradient(160deg,#0B4A57,#062A32)}
+.badge{position:absolute;top:-4mm;left:4mm;background:#fff;color:var(--g);border:.4mm solid var(--g);font-family:JB;font-size:6.8pt;letter-spacing:.14em;padding:1mm 2.5mm;border-radius:10mm}
+.arrow{font-family:JB;font-size:7.5pt;letter-spacing:.2em;color:var(--t);text-align:right;margin-top:1.5mm}
+table{width:100%;border-collapse:separate;border-spacing:0;font-size:9pt}
+th{font-family:JB;font-size:7.5pt;letter-spacing:.16em;text-align:center;color:#fff;background:var(--td);padding:2.6mm 2mm}
+th:first-child{text-align:left;border-radius:2mm 0 0 0}th:last-child{border-radius:0 2mm 0 0}
+td{padding:2.4mm 2mm;text-align:center;border-bottom:.3mm solid #E6DFD1;font-variant-numeric:tabular-nums}
+td:first-child{text-align:left;font-family:MX;font-size:8.5pt}
+tr.tot td{background:var(--c);font-family:MX;color:var(--td)}
+td.soft{background:rgba(232,180,90,.14);font-family:MX;color:#8A5A12}
+.two{display:grid;grid-template-columns:1fr 1.35fr;gap:6mm}
+.plc{display:flex;flex-direction:column;gap:2.2mm}
+.chip{display:flex;justify-content:space-between;align-items:center;border:.35mm solid #E3D6BD;border-radius:2.5mm;padding:2.6mm 3.5mm;font-family:MX;font-size:8.8pt;color:var(--td)}
+.chip b{color:#fff;background:var(--g);border-radius:10mm;padding:.8mm 3mm;font-size:8.5pt}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5mm}
+.card{border-radius:3mm;padding:3mm;border:.35mm solid #E3D6BD;text-align:center}
+.card .ph{font-family:JB;font-size:6.8pt;letter-spacing:.2em;color:var(--t)}
+.card .v{font-family:MX;font-size:15pt;color:var(--td);margin-top:1.2mm}
+.card .p{white-space:nowrap;font-size:6.9pt;margin-top:1mm;color:#6B7A7D}.card .p b{font-family:MX;color:var(--g)}
+.card.best{background:linear-gradient(160deg,#FFF6E4,#F6E6C4);border-color:var(--g)}
+.save{margin-top:5mm;display:flex;align-items:center;gap:5mm;border-radius:4mm;padding:4.5mm 6mm;color:#fff;background:linear-gradient(110deg,#08323C 0%,#0E5A6A 60%,#15707F 100%);position:relative;overflow:hidden}
+.save .big{font-family:MX;font-size:25pt;color:var(--g2);line-height:1;white-space:nowrap}
+.save .t{font-family:JB;letter-spacing:.2em;font-size:8.5pt;color:var(--g2)}
+.save p{margin:1mm 0 0;font-size:8.8pt;line-height:1.4}
+.note{margin-top:4mm;font-size:6.9pt;line-height:1.45;color:#6B7A7D}
+.foot{position:absolute;left:0;bottom:0;width:100%;height:14mm;background:var(--td);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 12mm;font-family:JB;font-size:8pt;letter-spacing:.22em}
+.foot span:last-child{color:var(--g2)}
+</style></head><body>
+<div class="hero"><div class="grid"></div>
+  <div class="brand"><img src="emblem.png">GARG REALTY GROUP</div>
+  <div class="kick">DHOLERA SIR &middot; PREMIUM PLOTS</div>
+  <h1>NILAYA</h1>
+  <div class="sub">Premium Plot Investment Opportunity</div>
+  <div class="stamp"><span>SOFT LAUNCH</span><b>&#8377;7,500</b><span>PER SQ. YD.</span></div>
+  <svg class="ridge" viewBox="0 0 800 40" preserveAspectRatio="none" height="14mm"><path d="M0 40 L0 24 L120 10 L210 22 L330 4 L430 20 L560 8 L660 24 L800 12 L800 40 Z" fill="#fff"/><path d="M0 24 L120 10 L210 22 L330 4 L430 20 L560 8 L660 24 L800 12" fill="none" stroke="#C88828" stroke-width="2.5"/></svg>
+</div>
+<div class="wrap">
+  <div class="sect">The Price Ladder &mdash; Enter at the Bottom</div>
+  <div class="ladder">
+    <div class="step s1"><div class="badge">YOU ARE HERE</div><div class="ph">SOFT LAUNCH</div><div class="pr">&#8377;7,500 <small>/ sq. yd.</small></div><div class="eff">Effective &#8377;8,500 incl. development</div></div>
+    <div class="step s2"><div class="ph">PRE-LAUNCH</div><div class="pr">&#8377;8,500 <small>/ sq. yd.</small></div><div class="eff">Effective &#8377;9,500 incl. development</div></div>
+    <div class="step s3"><div class="ph">LAUNCH</div><div class="pr">&#8377;9,500 <small>/ sq. yd.</small></div><div class="eff">Effective &#8377;10,500 incl. development</div></div>
+  </div>
+  <div class="arrow">PRICE RISES WITH EVERY PHASE &rarr;</div>
+
+  <div class="sect">Transparent Cost Structure</div>
+  <table><tr><th>PARTICULAR</th><th>SOFT LAUNCH</th><th>PRE-LAUNCH</th><th>LAUNCH</th></tr>
+  <tr><td>Plot Rate / Sq. Yd.</td><td class="soft">&#8377;7,500</td><td>&#8377;8,500</td><td>&#8377;9,500</td></tr>
+  <tr><td>Development / Sq. Yd.</td><td class="soft">&#8377;1,000</td><td>&#8377;1,000</td><td>&#8377;1,000</td></tr>
+  <tr class="tot"><td>Effective Rate incl. Development</td><td class="soft">&#8377;8,500</td><td>&#8377;9,500</td><td>&#8377;10,500</td></tr></table>
+
+  <div class="two">
+    <div><div class="sect">Premium Location (PLC)</div>
+      <div class="plc"><div class="chip">Corner Plot<b>+10%</b></div><div class="chip">Garden Facing / Garden Touch<b>+10%</b></div><div class="chip">40 Ft Road Facing<b>+10%</b></div></div></div>
+    <div><div class="sect">Example &mdash; 100 Sq. Yd. Plot</div>
+      <div class="cards">
+        <div class="card best"><div class="ph">SOFT LAUNCH</div><div class="v">&#8377;8.50 L</div><div class="p">With 10% PLC <b>&#8377;9.25 L</b></div></div>
+        <div class="card"><div class="ph">PRE-LAUNCH</div><div class="v">&#8377;9.50 L</div><div class="p">With 10% PLC <b>&#8377;10.35 L</b></div></div>
+        <div class="card"><div class="ph">LAUNCH</div><div class="v">&#8377;10.50 L</div><div class="p">With 10% PLC <b>&#8377;11.45 L</b></div></div>
+      </div>
+      <div class="note" style="margin-top:2mm">Base cost includes development. PLC example calculated on the plot rate.</div></div>
+  </div>
+
+  <div class="save"><div class="big">Save &#8377;2 L+</div><div><div class="t">EARLY-ENTRY ADVANTAGE</div><p>Book at the soft-launch rate and pay &#8377;2.00 L less on a 100 sq. yd. plot than at launch (&#8377;2.20 L less with PLC). Secure your preferred plot before pricing moves to pre-launch.</p></div></div>
+
+  <div class="note"><b>Note:</b> Development charges are &#8377;1,000 per sq. yd. PLC is applicable as per plot attributes. Where more than one qualifying PLC applies, the final payable amount should be confirmed as per the project's allotment/pricing policy. Taxes, registration, stamp duty and other statutory charges, if applicable, are additional.</div>
+</div>
+<div class="foot"><span>GARG REALTY GROUP &middot; SINCE 2007</span><span>GARGREALTYGROUP.COM</span></div>
+</body></html>
