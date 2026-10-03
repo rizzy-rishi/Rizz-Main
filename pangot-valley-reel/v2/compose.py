@@ -13,7 +13,7 @@ W = R / "work"
 FF = imageio_ffmpeg.get_ffmpeg_exe()
 TL = json.loads((W / "timeline.json").read_text())
 T = TL["total"]
-E = T - 4.0
+E = 24.883333 - 4.0  # match title render timing
 FPS = 60
 CHROME = "/opt/pw-browsers/chromium-1194/chrome-linux/chrome"
 
@@ -41,14 +41,13 @@ def titles(h):
 GRADE = (
     "scale=1080:1936:flags=lanczos,crop=1080:1920,"
     f"scale=w='trunc(1080*(1+0.055*t/{T})/2)*2':h=-2:eval=frame:flags=bicubic,crop=1080:1920,"
-    "unsharp=5:5:0.55:3:3:0,format=gbrp,"
+    "unsharp=5:5:0.55:3:3:0,eq=saturation=1.1:contrast=1.02,format=gbrp,"
     "curves=master='0/0.025 0.22/0.19 0.5/0.5 0.78/0.81 1/0.975':"
     "r='0/0 0.5/0.525 1/1':g='0/0.01 0.5/0.5 1/0.985':b='0/0.055 0.5/0.48 1/0.92',"
     "colorbalance=rs=-0.03:gs=0.01:bs=0.04:rh=0.05:gh=0.02:bh=-0.04,"
-    "eq=saturation=1.1:contrast=1.02,"
     "split[a][b];[b]gblur=sigma=32,colorchannelmixer=rr=1:gg=0.88:bb=0.7[g];"
     "[a][g]blend=all_mode=screen:all_opacity=0.2,"
-    "split[c][d];[d]gblur=sigma=48,eq=brightness=0.05:saturation=0.8[fb];"
+    "split[c][d];[d]gblur=sigma=48,curves=all='0/0.06 1/1'[fb];"
     f"[c][fb]blend=all_expr='A*(1-clip((T-{E})/1.1\\,0\\,1)*0.92)+B*clip((T-{E})/1.1\\,0\\,1)*0.92',"
     "vignette=angle=0.4,noise=alls=3:allf=t,format=yuv420p"
 )
