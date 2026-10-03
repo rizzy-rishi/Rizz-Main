@@ -1,0 +1,117 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Disp;src:url(../../logo-options/fonts/Cormorant_Garamond_wght_600_.ttf)}
+@font-face{font-family:DispI;src:url(../../logo-options/fonts/Cormorant_Garamond_ital_wght_1_500_.ttf)}
+@font-face{font-family:Sans;src:url(../../logo-options/fonts/Montserrat_wght_500_.ttf)}
+@font-face{font-family:SansB;src:url(../../logo-options/fonts/Montserrat_wght_600_.ttf)}
+html,body{margin:0;background:transparent}
+#st{position:relative;width:1080px;overflow:hidden;color:#fff}
+.abs{position:absolute;left:0;width:1080px;text-align:center}
+.ch{display:inline-block;will-change:transform,opacity,filter}
+.big{font-family:Disp;font-size:168px;line-height:1;letter-spacing:.3em;padding-left:.3em;text-shadow:0 6px 40px rgba(0,0,0,.35)}
+.it{font-family:DispI;font-size:96px;line-height:1.08;text-shadow:0 6px 36px rgba(0,0,0,.4)}
+.cap{font-family:Sans;font-size:25px;letter-spacing:.55em;padding-left:.55em;color:#F7E6C4;text-transform:uppercase;text-shadow:0 2px 14px rgba(0,0,0,.5)}
+.line{height:2px;background:linear-gradient(90deg,rgba(232,201,138,0),#E8C98A,rgba(232,201,138,0));margin:0 auto}
+.mask{overflow:hidden;padding:0 0 10px}
+#scrim{position:absolute;left:0;width:1080px;background:radial-gradient(ellipse at 50% 55%,rgba(5,18,16,.55) 0%,rgba(5,18,16,0) 70%)}
+#tint{position:absolute;inset:0;background:linear-gradient(180deg,rgba(248,243,233,.62),rgba(244,237,224,.72))}
+#end{position:absolute;left:0;width:1080px;text-align:center}
+#emw{position:relative;margin:0 auto}
+#em,#shine{position:absolute;left:0;top:0;width:100%;height:100%}
+#shine{-webkit-mask:url(assets/grg-emblem.png) center/contain no-repeat;mask:url(assets/grg-emblem.png) center/contain no-repeat;background:linear-gradient(105deg,rgba(255,255,255,0) 40%,rgba(255,250,235,.95) 50%,rgba(255,255,255,0) 60%);background-size:300% 100%}
+#word{display:block;margin:0 auto}
+.ec{font-family:SansB;font-size:27px;letter-spacing:.5em;padding-left:.5em;color:#12546A}
+.ew{font-family:Sans;font-size:21px;letter-spacing:.42em;padding-left:.42em;color:#A8782A}
+</style></head><body><div id="st">
+<div id="scrim"></div>
+
+<div class="abs" id="t1"><div class="big" id="pangot"></div><div class="line" id="l1" style="margin-top:26px"></div><div class="cap" id="k1" style="margin-top:26px">Nainital &middot; Uttarakhand</div></div>
+<div class="abs" id="t2"><div class="mask"><div class="it" id="t2a">Where clouds</div></div><div class="mask"><div class="it" id="t2b">come home.</div></div></div>
+<div class="abs" id="t3"><div class="big" style="letter-spacing:.06em;padding-left:.06em;font-size:200px"><span id="num">0</span><span style="font-size:96px;letter-spacing:.1em"> m</span></div><div class="cap" id="k3" style="margin-top:22px"></div></div>
+<div class="abs it" id="t4"></div>
+
+<div id="tint"></div>
+<div id="end">
+  <div id="emw"><img id="em" src="assets/grg-emblem.png"><div id="shine"></div></div>
+  <img id="word" src="assets/grg-word.png">
+  <div class="ec" id="ec" style="margin-top:44px">Sukkoon &middot; Pangot</div>
+  <div class="ew" id="ew" style="margin-top:16px">gargrealtygroup.com</div>
+</div>
+</div>
+<script>
+const Q=new URLSearchParams(location.search);
+const H=+Q.get('h')||1350, TOTAL=+Q.get('total')||24.9;
+const E=TOTAL-4.0;               // end card start
+const off=(H-1350)/2;            // 9:16 centring offset
+const $=id=>document.getElementById(id);
+$('st').style.height=H+'px';
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const P=(t,a,d)=>clamp((t-a)/d);
+const expo=p=>p>=1?1:1-Math.pow(2,-10*p);
+const sine=p=>-(Math.cos(Math.PI*p)-1)/2;
+const lerp=(a,b,p)=>a+(b-a)*p;
+
+// split helpers
+function split(el,text){el.innerHTML=[...text].map(c=>`<span class="ch">${c===' '?'&nbsp;':c}</span>`).join('');return [...el.children];}
+const L1=split($('pangot'),'PANGOT');
+const K3=split($('k3'),'ABOVE THE EVERYDAY');
+$('t4').innerHTML=['Wake','up','to','this.'].map(w=>`<span class="ch">${w}</span>`).join(' ');
+const W4=[...$('t4').children];
+
+// layout
+const ty=H===1350?760:1040+0;
+$('t1').style.top=(ty-30)+'px';$('t2').style.top=(ty+10)+'px';$('t3').style.top=(ty-20)+'px';$('t4').style.top=(ty+60)+'px';
+$('scrim').style.top=(ty-260)+'px';$('scrim').style.height='760px';
+const emH=380;$('emw').style.height=emH+'px';$('emw').style.width=(emH*447/653)+'px';
+$('word').style.height='128px';$('word').style.marginTop='34px';
+$('end').style.top=(off+250)+'px';
+
+function letterIn(els,t,a,stagger,dur,dy=46,blur=16,sc=1.18){
+  els.forEach((e,i)=>{const p=expo(P(t,a+i*stagger,dur));
+    e.style.opacity=p;e.style.filter=`blur(${(1-p)*blur}px)`;e.style.transform=`translateY(${(1-p)*dy}px) scale(${lerp(sc,1,p)})`;});
+}
+function letterOut(els,t,a,stagger,dur){
+  els.forEach((e,i)=>{const q=sine(P(t,a+i*stagger,dur));if(q<=0)return;
+    e.style.opacity=1-q;e.style.filter=`blur(${q*14}px)`;e.style.transform=`translateY(${-q*30}px)`;});
+}
+function blockFade(id,t,a,b,dur=.9){const qi=expo(P(t,a,dur)),qo=sine(P(t,b,.8));const o=qi*(1-qo);
+  $(id).style.opacity=o;$(id).style.filter=`blur(${(1-qi)*10+qo*10}px)`;return o;}
+
+window.render=t=>{
+  // T1  PANGOT
+  const a1=.45;
+  letterIn(L1,t,a1,.09,1.3);letterOut(L1,t,4.4,.05,.7);
+  const lp=expo(P(t,a1+.9,1.2)),lq=sine(P(t,4.4,.6));
+  $('l1').style.width=(lp*440*(1-lq))+'px';
+  const kp=expo(P(t,a1+1.3,1.4)),kq=sine(P(t,4.5,.6));
+  $('k1').style.opacity=kp*(1-kq);$('k1').style.letterSpacing=lerp(1.1,.55,kp)+'em';
+  $('t1').style.display=t<5.4?'block':'none';
+  // T2  Where clouds / come home.
+  const s2=6.1;
+  [['t2a',0],['t2b',.32]].forEach(([id,d])=>{const p=expo(P(t,s2+d,1.4));$(id).style.transform=`translateY(${(1-p)*115}%)`;});
+  const o2=1-sine(P(t,11.0,.9));$('t2').style.opacity=o2;$('t2').style.filter=`blur(${(1-o2)*10}px)`;
+  $('t2').style.display=(t>s2-.1&&t<12.1)?'block':'none';
+  // T3  1,900 m  + ABOVE THE EVERYDAY
+  const s3=12.5;
+  const o3=blockFade('t3',t,s3,16.6);
+  const c=sine(P(t,s3,1.8));$('num').textContent=Math.round(1900*c).toLocaleString('en-IN');
+  letterIn(K3,t,s3+.9,.035,.8,12,6,1);
+  $('t3').style.display=(t>s3-.1&&t<17.5)?'block':'none';
+  // T4  Wake up to this.
+  const s4=18.1;
+  letterIn(W4,t,s4,.28,1.2,30,14,1.08);
+  const o4=1-sine(P(t,E-.4,.7));$('t4').style.opacity=o4;
+  $('t4').style.display=(t>s4-.1&&t<E+.4)?'block':'none';
+  // scrim follows whichever title is on screen
+  const vis=Math.max(t<5.2?expo(P(t,.3,1)):0, (t>6&&t<12)?o2:0, (t>12.4&&t<17.4)?o3:0, (t>18.0&&t<E+.3)?o4:0);
+  $('scrim').style.opacity=vis*.75;
+  // END CARD
+  const ep=sine(P(t,E,1.1));$('tint').style.opacity=ep;
+  const em=expo(P(t,E+.45,1.6));$('emw').style.opacity=em;$('emw').style.transform=`scale(${lerp(.9,1,em)})`;$('emw').style.filter=`blur(${(1-em)*12}px)`;
+  const sh=P(t,E+1.6,1.3);$('shine').style.backgroundPosition=`${lerp(100,-50,sh)}% 0`;$('shine').style.opacity=sh>0&&sh<1?1:0;
+  const wd=expo(P(t,E+1.05,1.3));$('word').style.opacity=wd;$('word').style.transform=`translateY(${(1-wd)*26}px)`;$('word').style.filter=`blur(${(1-wd)*8}px)`;
+  const ec=expo(P(t,E+1.7,1.2));$('ec').style.opacity=ec;$('ec').style.letterSpacing=lerp(.9,.5,ec)+'em';
+  const ew=expo(P(t,E+2.1,1.2));$('ew').style.opacity=ew;
+  $('end').style.display=t>E?'block':'none';
+};
+window.READY=true;
+</script></body></html>
