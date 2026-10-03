@@ -1,0 +1,41 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:SerifI;src:url(../logo-options/fonts/Cormorant_Garamond_ital_wght_1_500_.ttf)}
+@font-face{font-family:Serif;src:url(../logo-options/fonts/Cormorant_Garamond_wght_600_.ttf)}
+@font-face{font-family:Sans;src:url(../logo-options/fonts/Montserrat_wght_500_.ttf)}
+html,body{margin:0;background:transparent}
+#st{position:relative;width:1080px;overflow:hidden;color:#fff}
+.abs{position:absolute;left:0;width:1080px;text-align:center}
+.k{font-family:Sans;font-size:26px;letter-spacing:.5em;padding-left:.5em;color:#F6E7C8;text-transform:uppercase}
+.l{font-family:SerifI;font-size:76px;line-height:1.1;text-shadow:0 4px 30px rgba(0,0,0,.45)}
+.rule{width:60px;height:2px;background:#E8C98A;margin:22px auto}
+#scrim{position:absolute;left:0;bottom:0;width:1080px;background:linear-gradient(180deg,rgba(6,20,18,0) 0%,rgba(6,20,18,.5) 100%)}
+#end{position:absolute;inset:0;background:rgba(6,20,18,.42);display:flex;flex-direction:column;align-items:center;justify-content:center}
+#end img{height:120px;opacity:.95}
+#end .n{font-family:Serif;font-size:64px;letter-spacing:.24em;padding-left:.24em;margin-top:30px}
+#end .w{font-family:Sans;font-size:24px;letter-spacing:.42em;padding-left:.42em;color:#F6E7C8;margin-top:6px}
+</style></head><body><div id="st">
+<div id="scrim"></div>
+<div class="abs" id="t1"><div class="k">Pangot &middot; Nainital</div><div class="rule"></div><div class="l">Golden hour in the valley.</div></div>
+<div class="abs" id="t2"><div class="l">1,900 m above the everyday.</div></div>
+<div class="abs" id="t3"><div class="l">Wake up to this.</div></div>
+<div id="end"><img src="emblem-rev.png"><div class="n">SUKKOON</div><div class="rule"></div><div class="w">Pangot &middot; Nainital</div><div class="w" style="margin-top:14px;font-size:20px;opacity:.85">gargrealtygroup.com</div></div>
+</div>
+<script>
+const H=+new URLSearchParams(location.search).get('h')||1350;
+const st=document.getElementById('st');st.style.height=H+'px';
+const base=H===1350?1000:1380;
+['t1','t2','t3'].forEach(id=>document.getElementById(id).style.top=(id==='t1'?base-60:base)+'px');
+document.getElementById('scrim').style.height=(H*0.42)+'px';
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const ease=p=>p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;
+function win(t,a,b,fi=1.0,fo=.9){return ease(clamp((t-a)/fi))*ease(clamp((b-t)/fo));}
+function set(id,o,t,a){const e=document.getElementById(id);const rise=(1-ease(clamp((t-a)/1.4)))*24;
+  e.style.opacity=o;e.style.transform=`translateY(${rise}px)`;e.style.filter=`blur(${(1-o)*6}px)`;}
+window.render=t=>{
+  const o1=win(t,.6,5.2),o2=win(t,6.6,11.3),o3=win(t,12.6,16.6),oe=ease(clamp((t-17.0)/1.2));
+  set('t1',o1,t,.6);set('t2',o2,t,6.6);set('t3',o3,t,12.6);
+  document.getElementById('scrim').style.opacity=Math.max(o1,o2,o3)*(1-oe);
+  const e=document.getElementById('end');e.style.opacity=oe;e.style.filter=`blur(${(1-oe)*5}px)`;
+};
+window.READY=true;
+</script></body></html>
