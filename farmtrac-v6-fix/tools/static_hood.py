@@ -23,6 +23,8 @@ layer = cv2.GaussianBlur(np.load(f"{S}/wide/layer.npy").astype(np.float32), (0, 
 small = cv2.resize(layer, (W, H), interpolation=cv2.INTER_AREA); a = small[..., 3:]/255
 ys, xs = Y0-BY0, X0-BX0
 plate[ys:ys+H, xs:xs+W] = plate[ys:ys+H, xs:xs+W]*(1-a) + small[..., :3]*a
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import front_emblem
+plate = front_emblem.fix(plate)
 # hood region mask, kept inside the body, feathered
 poly = np.array([[446, 402], [700, 412], [900, 440], [1004, 470], [1010, 612], [700, 618], [446, 652]]) - [BX0, BY0]
 hm = np.zeros(plate.shape[:2], np.float32); cv2.fillPoly(hm, [poly.astype(np.int32)], 1)
